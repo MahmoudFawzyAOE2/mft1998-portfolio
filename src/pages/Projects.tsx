@@ -4,63 +4,67 @@ import ProjectCard, { ProjectProps } from '@/components/projects/ProjectCard';
 import ToolsCarousel from '@/components/projects/ToolsCarousel';
 
 const Projects: React.FC = () => {
-  // Static project data (hardcoded)
+  // Static project data
   const staticProjects: ProjectProps[] = [
     {
-      title: "Automated Testing Framework",
+      title: "Testing The Guru99 Bank Demo Website",
       description: [
-        "Developed comprehensive test automation framework using Selenium and Java",
-        "Implemented CI/CD integration with Jenkins for continuous testing",
-        "Reduced regression testing time by 70% while increasing test coverage"
+        "Tests multiple versions of Guru99 Bank Demo website.",
+        "Performs SRS analysis, unit, integration, and system testing.",
+        "Implement and executes test cases and reports bugs."
       ],
-      image: "https://images.unsplash.com/photo-1561069934-eee225952461?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-      githubUrl: "https://github.com/yourusername/automation-framework",
+      image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+      githubUrl: "https://github.com/MahmoudFawzyAOE2/Guru99-SW-Tesing-Project-1",
     },
     {
-      title: "API Testing Suite",
+      title: "Sutra E-commerce Test Automation",
       description: [
-        "Created REST API testing framework with Postman and Newman",
-        "Built custom assertions and validation libraries for complex responses",
-        "Documented over 200 API endpoints with examples and test cases"
+        "Automates testing of multiple core functionalities.",
+        "Streamlines the testing process for Sutra E-commerce.",
+        "Built with Selenium WebDriver for robust automation."
       ],
-      image: "https://images.unsplash.com/photo-1573164713988-8665fc963095?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-      githubUrl: "https://github.com/yourusername/api-testing",
+      image: "https://images.unsplash.com/photo-1593642532744-d377ab507dc8?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+      githubUrl: "https://github.com/MahmoudFawzyAOE2/Sutra_ShoppingWebsite_WebAutomation",
     },
     {
-      title: "Performance Testing Tool",
+      title: "Trello API Test Automation",
       description: [
-        "Implemented JMeter scripts for load and stress testing of e-commerce platforms",
-        "Created custom dashboards for real-time performance monitoring",
-        "Identified and resolved bottlenecks resulting in 35% improved response time"
+        "Automates testing of Trello API functionalities.",
+        "Ensures reliable and efficient API testing.",
+        "Built with RestAssured for robust API interaction."
       ],
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-      githubUrl: "https://github.com/yourusername/performance-testing",
+      image: "https://images.unsplash.com/photo-1565106430482-8f6e74349ca1?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+      githubUrl: "https://github.com/MahmoudFawzyAOE2/Trello_API_Testing_Project",
     },
     {
-      title: "Mobile Test Automation",
+      title: "Mahmoud Fawzy's Personal Website",
       description: [
-        "Built cross-platform mobile testing solution with Appium",
-        "Implemented BDD approach with Cucumber for improved test readability",
-        "Set up parallel test execution reducing test time by 60%"
+        "Showcases a portfolio for a Software Testing Engineer.",
+        "Highlights experience, projects, and services in QA.",
+        "Provides a way for visitors to connect for inquiries."
       ],
-      image: "https://images.unsplash.com/photo-1526498460520-4c246339dccb?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-      githubUrl: "https://github.com/yourusername/mobile-testing",
+      image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+      githubUrl: "https://github.com/MahmoudFawzyAOE2/MahmoudFawzyAOE2.github.io",
     }
   ];
 
   const tools = [
-    'https://www.selenium.dev/images/selenium_logo_square_green.png',
-    'https://upload.wikimedia.org/wikipedia/commons/a/a4/Cypress.png',
-    'https://avatars.githubusercontent.com/u/3221291?s=200&v=4', // Appium
-    'https://upload.wikimedia.org/wikipedia/commons/e/e5/Jest_Logo.png',
-    'https://upload.wikimedia.org/wikipedia/commons/9/9f/Cucumber_logo.svg',
-    'https://upload.wikimedia.org/wikipedia/commons/5/52/Apache_Maven_logo.svg',
-    'https://upload.wikimedia.org/wikipedia/commons/5/59/JMeter.svg',
-    'https://www.postman.com/assets/logos/postman-logo-icon-orange.svg',
-    'https://upload.wikimedia.org/wikipedia/commons/e/e3/Jenkins_logo_with_title.svg',
-    'https://upload.wikimedia.org/wikipedia/commons/d/d5/Selenium_Logo.png',
-    'https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg',
-    'https://upload.wikimedia.org/wikipedia/commons/b/ba/Pytest_logo.svg',
+    'https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg',
+    'https://raw.githubusercontent.com/devicons/devicon/master/icons/c/c-original.svg',
+    'https://user-images.githubusercontent.com/25181517/192106073-90fffafe-3562-4ff9-a37e-c77a2da0ff58.png',
+    'https://cdn-icons-png.flaticon.com/512/226/226777.png',
+    'https://upload.wikimedia.org/wikipedia/commons/2/21/Matlab_Logo.png',
+    'https://user-images.githubusercontent.com/25181517/192158954-f88b5814-d510-4564-b285-dff7d6400dad.png',
+    'https://user-images.githubusercontent.com/25181517/183898674-75a4a1b1-f960-4ea9-abcb-637170a00a75.png',
+    'https://github.com/marwin1991/profile-technology-icons/assets/76662862/2481dc48-be6b-4ebb-9e8c-3b957efe69fa',
+    'https://www.svgrepo.com/show/354202/postman-icon.svg',
+    'https://avatars.githubusercontent.com/u/19369327?s=200&v=4',
+    'https://miro.medium.com/v2/resize:fit:1400/1*musVE9e4bgjTWeoRmc-P_w.png',
+    'https://howtodoinjava.com/wp-content/uploads/2014/12/TestNG.png',
+    'https://avatars.githubusercontent.com/u/5879127?s=280&v=4',
+    'https://user-images.githubusercontent.com/25181517/183914128-3fc88b4a-4ac1-40e6-9443-9a30182379b7.png',
+    'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/IntelliJ_IDEA_Icon.svg/2048px-IntelliJ_IDEA_Icon.svg.png',
+    'https://user-images.githubusercontent.com/25181517/183912952-83784e94-629d-4c34-a961-ae2ae795b662.png'
   ];
 
   return (
