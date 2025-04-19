@@ -6,6 +6,7 @@ import ToolsCarousel from '@/components/projects/ToolsCarousel';
 import { supabase } from '@/integrations/supabase/client';
 import { ProjectData } from '@/components/projects/types';
 import { toast } from 'sonner';
+import { Skeleton } from '@/components/ui/skeleton';
 
 const Projects: React.FC = () => {
   const { data: projects = [], isLoading, error } = useQuery({
@@ -24,7 +25,12 @@ const Projects: React.FC = () => {
       
       console.log('Projects fetched from Supabase:', data);
       return data as ProjectData[];
-    }
+    },
+    // Add retry configuration to help with intermittent connection issues
+    retry: 3,
+    retryDelay: 1000,
+    // Disable stale time to ensure fresh data on each visit
+    staleTime: 0
   });
 
   useEffect(() => {
@@ -48,6 +54,32 @@ const Projects: React.FC = () => {
       githubUrl: project.github_link || '#',
     };
   };
+
+  // Test direct Supabase access
+  const testSupabaseConnection = async () => {
+    try {
+      console.log('Testing direct Supabase connection...');
+      const { data, error } = await supabase
+        .from('Projects')
+        .select('count');
+      
+      if (error) {
+        console.error('Test connection error:', error);
+        toast.error('Connection test failed');
+      } else {
+        console.log('Connection test result:', data);
+        toast.success(`Successfully connected to Supabase. Found ${data.length} projects.`);
+      }
+    } catch (err) {
+      console.error('Unexpected error in test connection:', err);
+      toast.error('Unexpected error in connection test');
+    }
+  };
+
+  // Run test connection on mount
+  useEffect(() => {
+    testSupabaseConnection();
+  }, []);
 
   const tools = [
     'https://www.selenium.dev/images/selenium_logo_square_green.png',
@@ -73,21 +105,42 @@ const Projects: React.FC = () => {
         </p>
         
         {isLoading ? (
-          <div className="text-center p-8">
-            <div className="animate-pulse h-6 w-32 bg-gray-200 rounded mx-auto mb-4"></div>
-            <div className="text-center">Loading projects...</div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {[1, 2].map((i) => (
+              <div key={i} className="border rounded-lg p-4">
+                <Skeleton className="h-48 w-full mb-4" />
+                <Skeleton className="h-6 w-3/4 mb-2" />
+                <Skeleton className="h-4 w-full mb-1" />
+                <Skeleton className="h-4 w-5/6 mb-1" />
+                <Skeleton className="h-4 w-4/6 mb-4" />
+                <Skeleton className="h-10 w-1/3" />
+              </div>
+            ))}
           </div>
         ) : error ? (
           <div className="text-center text-red-500 p-8">
             <p>Error loading projects. Please try again later.</p>
             <p className="text-sm mt-2">Error details: {error.message}</p>
+            <button 
+              onClick={() => window.location.reload()} 
+              className="mt-4 px-4 py-2 bg-primary text-white rounded hover:bg-primary/90"
+            >
+              Retry
+            </button>
           </div>
         ) : projects.length === 0 ? (
           <div className="text-center p-8 border border-dashed rounded-lg border-gray-300">
             <p className="mb-4">No projects found in the database.</p>
-            <p className="text-sm text-muted-foreground">
-              Add projects through the Supabase dashboard to see them here.
+            <p className="text-sm text-muted-foreground mb-4">
+              Projects have been added to Supabase but are not appearing here.
+              Please check the browser console for debugging information.
             </p>
+            <button 
+              onClick={testSupabaseConnection} 
+              className="px-4 py-2 bg-primary text-white rounded hover:bg-primary/90"
+            >
+              Test Connection
+            </button>
           </div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
