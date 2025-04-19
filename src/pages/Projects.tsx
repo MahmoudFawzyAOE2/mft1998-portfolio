@@ -1,85 +1,52 @@
 
-import React, { useEffect } from 'react';
-import { useQuery } from '@tanstack/react-query';
+import React from 'react';
 import ProjectCard, { ProjectProps } from '@/components/projects/ProjectCard';
 import ToolsCarousel from '@/components/projects/ToolsCarousel';
-import { supabase } from '@/integrations/supabase/client';
-import { ProjectData } from '@/components/projects/types';
-import { toast } from 'sonner';
-import { Skeleton } from '@/components/ui/skeleton';
 
 const Projects: React.FC = () => {
-  const { data: projects = [], isLoading, error } = useQuery({
-    queryKey: ['projects'],
-    queryFn: async () => {
-      console.log('Fetching projects from Supabase...');
-      const { data, error } = await supabase
-        .from('Projects')
-        .select('*')
-        .order('created_at', { ascending: false });
-      
-      if (error) {
-        console.error('Error fetching projects:', error);
-        throw error;
-      }
-      
-      console.log('Projects fetched from Supabase:', data);
-      return data as ProjectData[];
+  // Static project data (hardcoded)
+  const staticProjects: ProjectProps[] = [
+    {
+      title: "Automated Testing Framework",
+      description: [
+        "Developed comprehensive test automation framework using Selenium and Java",
+        "Implemented CI/CD integration with Jenkins for continuous testing",
+        "Reduced regression testing time by 70% while increasing test coverage"
+      ],
+      image: "https://images.unsplash.com/photo-1561069934-eee225952461?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+      githubUrl: "https://github.com/yourusername/automation-framework",
     },
-    // Add retry configuration to help with intermittent connection issues
-    retry: 3,
-    retryDelay: 1000,
-    // Disable stale time to ensure fresh data on each visit
-    staleTime: 0
-  });
-
-  useEffect(() => {
-    if (error) {
-      console.error('Error in useQuery:', error);
-      toast.error('Failed to load projects. Please try again later.');
+    {
+      title: "API Testing Suite",
+      description: [
+        "Created REST API testing framework with Postman and Newman",
+        "Built custom assertions and validation libraries for complex responses",
+        "Documented over 200 API endpoints with examples and test cases"
+      ],
+      image: "https://images.unsplash.com/photo-1573164713988-8665fc963095?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+      githubUrl: "https://github.com/yourusername/api-testing",
+    },
+    {
+      title: "Performance Testing Tool",
+      description: [
+        "Implemented JMeter scripts for load and stress testing of e-commerce platforms",
+        "Created custom dashboards for real-time performance monitoring",
+        "Identified and resolved bottlenecks resulting in 35% improved response time"
+      ],
+      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+      githubUrl: "https://github.com/yourusername/performance-testing",
+    },
+    {
+      title: "Mobile Test Automation",
+      description: [
+        "Built cross-platform mobile testing solution with Appium",
+        "Implemented BDD approach with Cucumber for improved test readability",
+        "Set up parallel test execution reducing test time by 60%"
+      ],
+      image: "https://images.unsplash.com/photo-1526498460520-4c246339dccb?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+      githubUrl: "https://github.com/yourusername/mobile-testing",
     }
-    
-    if (projects && projects.length === 0 && !isLoading) {
-      console.log('No projects found in the database');
-      toast.info('No projects found. Add some projects in the Supabase dashboard.');
-    }
-  }, [error, projects, isLoading]);
-
-  const transformProjectData = (project: ProjectData): ProjectProps => {
-    console.log('Transforming project:', project);
-    return {
-      title: project.Title || 'Untitled Project',
-      description: project.Description ? [project.Description] : ['No description available'],
-      image: 'https://images.unsplash.com/photo-1561069934-eee225952461?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
-      githubUrl: project.github_link || '#',
-    };
-  };
-
-  // Test direct Supabase access
-  const testSupabaseConnection = async () => {
-    try {
-      console.log('Testing direct Supabase connection...');
-      const { data, error } = await supabase
-        .from('Projects')
-        .select('count');
-      
-      if (error) {
-        console.error('Test connection error:', error);
-        toast.error('Connection test failed');
-      } else {
-        console.log('Connection test result:', data);
-        toast.success(`Successfully connected to Supabase. Found ${data.length} projects.`);
-      }
-    } catch (err) {
-      console.error('Unexpected error in test connection:', err);
-      toast.error('Unexpected error in connection test');
-    }
-  };
-
-  // Run test connection on mount
-  useEffect(() => {
-    testSupabaseConnection();
-  }, []);
+  ];
 
   const tools = [
     'https://www.selenium.dev/images/selenium_logo_square_green.png',
@@ -104,51 +71,11 @@ const Projects: React.FC = () => {
           Explore my testing projects that have helped companies deliver high-quality software products.
         </p>
         
-        {isLoading ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {[1, 2].map((i) => (
-              <div key={i} className="border rounded-lg p-4">
-                <Skeleton className="h-48 w-full mb-4" />
-                <Skeleton className="h-6 w-3/4 mb-2" />
-                <Skeleton className="h-4 w-full mb-1" />
-                <Skeleton className="h-4 w-5/6 mb-1" />
-                <Skeleton className="h-4 w-4/6 mb-4" />
-                <Skeleton className="h-10 w-1/3" />
-              </div>
-            ))}
-          </div>
-        ) : error ? (
-          <div className="text-center text-red-500 p-8">
-            <p>Error loading projects. Please try again later.</p>
-            <p className="text-sm mt-2">Error details: {error.message}</p>
-            <button 
-              onClick={() => window.location.reload()} 
-              className="mt-4 px-4 py-2 bg-primary text-white rounded hover:bg-primary/90"
-            >
-              Retry
-            </button>
-          </div>
-        ) : projects.length === 0 ? (
-          <div className="text-center p-8 border border-dashed rounded-lg border-gray-300">
-            <p className="mb-4">No projects found in the database.</p>
-            <p className="text-sm text-muted-foreground mb-4">
-              Projects have been added to Supabase but are not appearing here.
-              Please check the browser console for debugging information.
-            </p>
-            <button 
-              onClick={testSupabaseConnection} 
-              className="px-4 py-2 bg-primary text-white rounded hover:bg-primary/90"
-            >
-              Test Connection
-            </button>
-          </div>
-        ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {projects.map((project) => (
-              <ProjectCard key={project.id} {...transformProjectData(project)} />
-            ))}
-          </div>
-        )}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {staticProjects.map((project, index) => (
+            <ProjectCard key={index} {...project} />
+          ))}
+        </div>
       </div>
       
       <div className="mt-16">
