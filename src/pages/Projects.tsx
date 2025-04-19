@@ -1,23 +1,53 @@
-import React from 'react';
+
+import React, { useEffect } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import ProjectCard, { ProjectProps } from '@/components/projects/ProjectCard';
 import ToolsCarousel from '@/components/projects/ToolsCarousel';
 import { supabase } from '@/integrations/supabase/client';
 import { ProjectData } from '@/components/projects/types';
+import { toast } from 'sonner';
 
 const Projects: React.FC = () => {
   const { data: projects = [], isLoading, error } = useQuery({
     queryKey: ['projects'],
     queryFn: async () => {
+      console.log('Fetching projects from Supabase...');
       const { data, error } = await supabase
         .from('Projects')
         .select('*')
         .order('created_at', { ascending: false });
       
-      if (error) throw error;
+      if (error) {
+        console.error('Error fetching projects:', error);
+        throw error;
+      }
+      
+      console.log('Projects fetched from Supabase:', data);
       return data as ProjectData[];
     }
   });
+
+  useEffect(() => {
+    if (error) {
+      console.error('Error in useQuery:', error);
+      toast.error('Failed to load projects. Please try again later.');
+    }
+    
+    if (projects && projects.length === 0 && !isLoading) {
+      console.log('No projects found in the database');
+      toast.info('No projects found. Add some projects in the Supabase dashboard.');
+    }
+  }, [error, projects, isLoading]);
+
+  const transformProjectData = (project: ProjectData): ProjectProps => {
+    console.log('Transforming project:', project);
+    return {
+      title: project.Title || 'Untitled Project',
+      description: project.Description ? [project.Description] : ['No description available'],
+      image: 'https://images.unsplash.com/photo-1561069934-eee225952461?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
+      githubUrl: project.github_link || '#',
+    };
+  };
 
   const tools = [
     'https://www.selenium.dev/images/selenium_logo_square_green.png',
@@ -34,13 +64,6 @@ const Projects: React.FC = () => {
     'https://upload.wikimedia.org/wikipedia/commons/b/ba/Pytest_logo.svg',
   ];
 
-  const transformProjectData = (project: ProjectData): ProjectProps => ({
-    title: project.Title || 'Untitled Project',
-    description: project.Description ? [project.Description] : ['No description available'],
-    image: 'https://images.unsplash.com/photo-1561069934-eee225952461?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
-    githubUrl: project.github_link || '#',
-  });
-
   return (
     <div className="py-12">
       <div className="section-container">
@@ -50,9 +73,22 @@ const Projects: React.FC = () => {
         </p>
         
         {isLoading ? (
-          <div className="text-center">Loading projects...</div>
+          <div className="text-center p-8">
+            <div className="animate-pulse h-6 w-32 bg-gray-200 rounded mx-auto mb-4"></div>
+            <div className="text-center">Loading projects...</div>
+          </div>
         ) : error ? (
-          <div className="text-center text-red-500">Error loading projects. Please try again later.</div>
+          <div className="text-center text-red-500 p-8">
+            <p>Error loading projects. Please try again later.</p>
+            <p className="text-sm mt-2">Error details: {error.message}</p>
+          </div>
+        ) : projects.length === 0 ? (
+          <div className="text-center p-8 border border-dashed rounded-lg border-gray-300">
+            <p className="mb-4">No projects found in the database.</p>
+            <p className="text-sm text-muted-foreground">
+              Add projects through the Supabase dashboard to see them here.
+            </p>
+          </div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {projects.map((project) => (
