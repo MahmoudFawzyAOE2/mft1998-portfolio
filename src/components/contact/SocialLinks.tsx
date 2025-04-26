@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Linkedin, Mail, Github, ExternalLink } from 'lucide-react';
+import { Linkedin, Mail, Github, MessageCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 interface SocialLink {
@@ -13,28 +13,23 @@ const SocialLinks: React.FC = () => {
   const socialLinks: SocialLink[] = [
     {
       name: 'LinkedIn',
-      url: 'https://linkedin.com/in/yourprofile',
+      url: 'https://linkedin.com/in/mft1998',
       icon: <Linkedin className="h-5 w-5" />,
     },
     {
       name: 'GitHub',
-      url: 'https://github.com/yourusername',
+      url: 'https://github.com/MahmoudFawzyAOE2',
       icon: <Github className="h-5 w-5" />,
     },
     {
       name: 'Email',
-      url: 'mailto:your.email@example.com',
+      url: 'mailto:1998mft1998Ggmail.com',
       icon: <Mail className="h-5 w-5" />,
     },
     {
       name: 'WhatsApp',
-      url: 'https://wa.me/yourphonenumber',
-      icon: <ExternalLink className="h-5 w-5" />,
-    },
-    {
-      name: 'Upwork',
-      url: 'https://www.upwork.com/freelancers/yourusername',
-      icon: <ExternalLink className="h-5 w-5" />,
+      url: 'https://wa.me/+201123398770',
+      icon: <MessageCircle className="h-5 w-5" />,
     },
   ];
 

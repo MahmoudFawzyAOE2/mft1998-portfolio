@@ -5,26 +5,26 @@ import ExperienceSection from '@/components/about/ExperienceSection';
 const About: React.FC = () => {
   const experiences = [
     {
-      company: 'Tech Innovations Inc.',
-      position: 'Senior QA Engineer',
+      company: 'Tadarab',
+      position: 'Software Tester',
       details: 'Led a team of 5 QA engineers in implementing automated testing strategies across web and mobile applications. Reduced testing time by 40% while improving bug detection rates by 25%.',
       image: 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
     },
     {
-      company: 'Global Software Solutions',
-      position: 'QA Automation Specialist',
+      company: 'ITI',
+      position: 'Softwware testing trainee',
       details: 'Designed and implemented comprehensive test automation frameworks using Selenium, Cypress, and Appium. Integrated CI/CD pipelines with automated testing, ensuring 99.5% test coverage.',
       image: 'https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
     },
     {
-      company: 'Innovative Apps LLC',
-      position: 'QA Analyst',
+      company: 'ESTB',
+      position: 'ISTQB Certified Tester',
       details: 'Performed manual and automated testing for mobile applications across iOS and Android platforms. Created detailed test plans, test cases, and defect reports, improving product quality by 30%.',
       image: 'https://images.unsplash.com/photo-1587614382346-4ec70e388b28?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
     },
     {
-      company: 'Software Excellence Corp',
-      position: 'Junior QA Tester',
+      company: 'Alexandria University',
+      position: 'Bachelor of Communication and Electronics Engineering',
       details: 'Started my career performing manual testing on web applications. Gained experience in functional testing, regression testing, and defect tracking, setting the foundation for my testing career.',
       image: 'https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
     },
@@ -35,7 +35,7 @@ const About: React.FC = () => {
       <div className="section-container">
         <h1 className="text-4xl font-bold mb-4 text-center">About Me</h1>
         <p className="text-xl text-muted-foreground mb-12 max-w-3xl mx-auto text-center">
-          With over 8 years of experience in software testing, I've helped companies deliver high-quality software that meets and exceeds user expectations.
+        As a junior software tester, I’m dedicated to ensuring software quality and excited to keep growing while helping deliver great user experiences.
         </p>
       </div>
       

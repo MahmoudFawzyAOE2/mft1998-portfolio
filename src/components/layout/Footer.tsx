@@ -8,7 +8,7 @@ const Footer: React.FC = () => {
     <footer className="w-full bg-background border-t">
       <div className="section-container py-6">
         <p className="text-center text-muted-foreground text-sm">
-          © {currentYear} QA Portfolio. All rights reserved.
+          © {currentYear} Mahmoud Fawzy. All rights reserved.
         </p>
       </div>
     </footer>

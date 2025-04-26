@@ -7,7 +7,7 @@ const QuoteSection: React.FC = () => {
       <div className="section-container py-16 md:py-20">
         <blockquote className="text-center">
           <p className="text-2xl md:text-3xl lg:text-4xl font-medium italic">
-            "I don't test to break things. I test to reveal the quality of what's already been built."
+            "The Software's Guardian: Catching what others overlook."
           </p>
           <footer className="mt-4 text-lg text-primary-foreground/80">
             — My Testing Philosophy

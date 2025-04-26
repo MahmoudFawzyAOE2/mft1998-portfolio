@@ -5,85 +5,76 @@ import ServiceCard, { ServiceProps } from '@/components/services/ServiceCard';
 const Services: React.FC = () => {
   const services: ServiceProps[] = [
     {
-      title: 'Automated Testing Implementation',
+      title: 'Manual Web & UI Testing',
       description: [
-        'Custom test automation frameworks tailored to your application',
-        'Cross-browser and cross-platform test automation',
-        'Integration with CI/CD pipelines',
-        'Maintenance and optimization of existing test suites'
+        'Identify usability issues through detailed manual testing',
+        'Perform cross-browser/device testing for consistency',
+        'Document bugs and collaborate for resolution'
       ],
-      image: 'https://images.unsplash.com/photo-1581472723648-909f4851d4ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
+      image: 'images/manual.webp',
       tools: [
-        'https://www.selenium.dev/images/selenium_logo_square_green.png',
-        'https://upload.wikimedia.org/wikipedia/commons/a/a4/Cypress.png',
-        'https://avatars.githubusercontent.com/u/3221291?s=200&v=4', // Appium
-        'https://upload.wikimedia.org/wikipedia/commons/e/e5/Jest_Logo.png',
+        'https://user-images.githubusercontent.com/25181517/183912952-83784e94-629d-4c34-a961-ae2ae795b662.png', // Jira
+        'https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Google_Sheets_logo_%282014-2020%29.svg/1498px-Google_Sheets_logo_%282014-2020%29.svg.png', // Google Sheets
       ],
     },
     {
-      title: 'Manual Testing Services',
+      title: 'Test Automation',
       description: [
-        'Comprehensive test case development and execution',
-        'Exploratory testing for edge cases and user experience',
-        'User acceptance testing (UAT) facilitation',
-        'Detailed defect reporting and verification'
+        'Develop and maintain Selenium scripts for testing',
+        'Implement TestNG frameworks for test execution',
+        'Use Allure to generate comprehensive reports'
       ],
-      image: 'https://images.unsplash.com/photo-1581092335397-9fa73b388d1e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
+      image: 'images/automation.webp',
       tools: [
-        'https://upload.wikimedia.org/wikipedia/commons/8/8d/YouTrack_Icon.svg',
-        'https://upload.wikimedia.org/wikipedia/commons/4/4e/Jira_Software_%28Blue%29.svg',
-        'https://upload.wikimedia.org/wikipedia/commons/8/8f/Testrail.svg',
-        'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Notion-logo.svg/200px-Notion-logo.svg.png',
+        'https://cdn-icons-png.flaticon.com/512/226/226777.png', // Java
+        'https://howtodoinjava.com/wp-content/uploads/2014/12/TestNG.png', // TestNG
+        'https://miro.medium.com/v2/resize:fit:1400/1*musVE9e4bgjTWeoRmc-P_w.png', // Selenium
+        'https://avatars.githubusercontent.com/u/5879127?s=280&v=4', // Allure
       ],
     },
     {
-      title: 'Performance Testing',
+      title: 'API Manual Testing',
       description: [
-        'Load testing to identify performance bottlenecks',
-        'Stress testing to determine system breaking points',
-        'Scalability testing for growing applications',
-        'Performance monitoring and optimization recommendations'
+        'Write clear, comprehensive API documentation',
+        'Create user guides for software applications',
+        'Document results and identify response issues'
       ],
-      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
+      image: 'images/api.webp',
       tools: [
-        'https://upload.wikimedia.org/wikipedia/commons/5/59/JMeter.svg',
-        'https://avatars.githubusercontent.com/u/6975870?s=200&v=4', // Gatling
-        'https://upload.wikimedia.org/wikipedia/commons/3/3c/Grafana_logo.svg',
-        'https://upload.wikimedia.org/wikipedia/commons/3/38/Prometheus_software_logo.svg',
+        'https://www.svgrepo.com/show/354202/postman-icon.svg', // Postman
+        'https://user-images.githubusercontent.com/25181517/183912952-83784e94-629d-4c34-a961-ae2ae795b662.png', // Jira
+        'https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Google_Sheets_logo_%282014-2020%29.svg/1498px-Google_Sheets_logo_%282014-2020%29.svg.png', // Google Sheets
       ],
     },
     {
-      title: 'API Testing',
+      title: 'API Test Automation',
       description: [
-        'RESTful and GraphQL API test automation',
-        'Contract testing between services',
-        'Security testing for API endpoints',
-        'Performance testing for critical APIs'
+        'Create automated tests with RestAssured',
+        'Execute API test cases using TestNG frameworks',
+        'Report the Test Process outcome using Allure'
       ],
-      image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
+      image: 'images/api automation.webp',
       tools: [
-        'https://www.postman.com/assets/logos/postman-logo-icon-orange.svg',
+        'https://cdn-icons-png.flaticon.com/512/226/226777.png', // Java
+        'https://howtodoinjava.com/wp-content/uploads/2014/12/TestNG.png', // TestNG
         'https://avatars.githubusercontent.com/u/19369327?s=200&v=4', // RestAssured
-        'https://github.com/pactumjs.png?size=200', // Pactum
-        'https://upload.wikimedia.org/wikipedia/commons/9/9a/Swagger-logo.png',
+        'https://avatars.githubusercontent.com/u/5879127?s=280&v=4', // Allure
       ],
     },
     {
-      title: 'Test Strategy Consulting',
+      title: 'Technical Documentation',
       description: [
-        'Development of comprehensive test strategies',
-        'Test process improvement recommendations',
-        'Testing tool selection and implementation',
-        'Team coaching and best practices implementation'
+        'Write clear, comprehensive technical documentation',
+        'Create user guides for software applications',
+        'Maintain accurate project documentation'
       ],
-      image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
+      image: 'images/documentation.webp',
       tools: [
-        'https://upload.wikimedia.org/wikipedia/commons/4/4e/Jira_Software_%28Blue%29.svg',
-        'https://upload.wikimedia.org/wikipedia/commons/4/45/Notion_app_logo.png',
-        'https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg',
-        'https://upload.wikimedia.org/wikipedia/commons/4/48/Agile-framework-icon.svg',
+        'https://user-images.githubusercontent.com/25181517/189715289-df3ee512-6eca-463f-a0f4-c10d94a06b2f.png', // Figma
+        'https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Google_Sheets_logo_%282014-2020%29.svg/1498px-Google_Sheets_logo_%282014-2020%29.svg.png', // Google Sheets
+        'https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Google_Docs_2020_Logo.svg/174px-Google_Docs_2020_Logo.svg.png', // Google Docs
       ],
-    },
+    }
   ];
   
   return (

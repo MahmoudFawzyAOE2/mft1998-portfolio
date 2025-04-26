@@ -11,7 +11,7 @@ const HeroSection: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           <div className="animate-fade-in">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-4">
-              Software Testing <span className="text-primary">Excellence</span>
+              Hello, I'm <p className="text-primary">Mahmoud Fawzy</p>
             </h1>
             <p className="text-xl text-muted-foreground mb-8">
               I help companies deliver flawless software through meticulous testing strategies,
