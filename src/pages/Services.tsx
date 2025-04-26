@@ -11,7 +11,7 @@ const Services: React.FC = () => {
         'Perform cross-browser/device testing for consistency',
         'Document bugs and collaborate for resolution'
       ],
-      image: 'images/manual.webp',
+      image: '/images/manual.webp',
       tools: [
         'https://user-images.githubusercontent.com/25181517/183912952-83784e94-629d-4c34-a961-ae2ae795b662.png', // Jira
         'https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Google_Sheets_logo_%282014-2020%29.svg/1498px-Google_Sheets_logo_%282014-2020%29.svg.png', // Google Sheets
@@ -24,7 +24,7 @@ const Services: React.FC = () => {
         'Implement TestNG frameworks for test execution',
         'Use Allure to generate comprehensive reports'
       ],
-      image: 'images/automation.webp',
+      image: '/images/automation.webp',
       tools: [
         'https://cdn-icons-png.flaticon.com/512/226/226777.png', // Java
         'https://howtodoinjava.com/wp-content/uploads/2014/12/TestNG.png', // TestNG
@@ -39,7 +39,7 @@ const Services: React.FC = () => {
         'Create user guides for software applications',
         'Document results and identify response issues'
       ],
-      image: 'images/api.webp',
+      image: '/images/api.webp',
       tools: [
         'https://www.svgrepo.com/show/354202/postman-icon.svg', // Postman
         'https://user-images.githubusercontent.com/25181517/183912952-83784e94-629d-4c34-a961-ae2ae795b662.png', // Jira
@@ -53,7 +53,7 @@ const Services: React.FC = () => {
         'Execute API test cases using TestNG frameworks',
         'Report the Test Process outcome using Allure'
       ],
-      image: 'images/api automation.webp',
+      image: '/images/api automation.webp',
       tools: [
         'https://cdn-icons-png.flaticon.com/512/226/226777.png', // Java
         'https://howtodoinjava.com/wp-content/uploads/2014/12/TestNG.png', // TestNG
@@ -68,7 +68,7 @@ const Services: React.FC = () => {
         'Create user guides for software applications',
         'Maintain accurate project documentation'
       ],
-      image: 'images/documentation.webp',
+      image: '/images/documentation.webp',
       tools: [
         'https://user-images.githubusercontent.com/25181517/189715289-df3ee512-6eca-463f-a0f4-c10d94a06b2f.png', // Figma
         'https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Google_Sheets_logo_%282014-2020%29.svg/1498px-Google_Sheets_logo_%282014-2020%29.svg.png', // Google Sheets
