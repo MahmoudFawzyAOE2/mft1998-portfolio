@@ -13,8 +13,8 @@ const Services: React.FC = () => {
       ],
       image: '/images/manual.webp',
       tools: [
-        '/images/githubeditgold.webp',
-        '/images/gmaileditgold.webp',
+        'https://user-images.githubusercontent.com/25181517/183912952-83784e94-629d-4c34-a961-ae2ae795b662.png', // Jira
+        'https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Google_Sheets_logo_%282014-2020%29.svg/1498px-Google_Sheets_logo_%282014-2020%29.svg.png', // Google Sheets
       ],
     },
     {
@@ -26,10 +26,10 @@ const Services: React.FC = () => {
       ],
       image: '/images/automation.webp',
       tools: [
-        '/images/linkedineditgold.webp',
-        '/images/upworkeditgold.webp',
-        '/images/githubeditgold.webp',
-        '/images/whatsappeditgold.webp',
+        'https://cdn-icons-png.flaticon.com/512/226/226777.png', // Java
+        'https://howtodoinjava.com/wp-content/uploads/2014/12/TestNG.png', // TestNG
+        'https://miro.medium.com/v2/resize:fit:1400/1*musVE9e4bgjTWeoRmc-P_w.png', // Selenium
+        'https://avatars.githubusercontent.com/u/5879127?s=280&v=4', // Allure
       ],
     },
     {
@@ -41,9 +41,9 @@ const Services: React.FC = () => {
       ],
       image: '/images/api.webp',
       tools: [
-        '/images/githubeditgold.webp',
-        '/images/gmaileditgold.webp',
-        '/images/linkedineditgold.webp',
+        'https://www.svgrepo.com/show/354202/postman-icon.svg', // Postman
+        'https://user-images.githubusercontent.com/25181517/183912952-83784e94-629d-4c34-a961-ae2ae795b662.png', // Jira
+        'https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Google_Sheets_logo_%282014-2020%29.svg/1498px-Google_Sheets_logo_%282014-2020%29.svg.png', // Google Sheets
       ],
     },
     {
@@ -55,10 +55,10 @@ const Services: React.FC = () => {
       ],
       image: '/images/api automation.webp',
       tools: [
-        '/images/upworkeditgold.webp',
-        '/images/githubeditgold.webp',
-        '/images/whatsappeditgold.webp',
-        '/images/linkedineditgold.webp',
+        'https://cdn-icons-png.flaticon.com/512/226/226777.png', // Java
+        'https://howtodoinjava.com/wp-content/uploads/2014/12/TestNG.png', // TestNG
+        'https://avatars.githubusercontent.com/u/19369327?s=200&v=4', // RestAssured
+        'https://avatars.githubusercontent.com/u/5879127?s=280&v=4', // Allure
       ],
     },
     {
@@ -70,9 +70,9 @@ const Services: React.FC = () => {
       ],
       image: '/images/documentation.webp',
       tools: [
-        '/images/gmaileditgold.webp',
-        '/images/linkedineditgold.webp',
-        '/images/githubeditgold.webp',
+        'https://user-images.githubusercontent.com/25181517/189715289-df3ee512-6eca-463f-a0f4-c10d94a06b2f.png', // Figma
+        'https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Google_Sheets_logo_%282014-2020%29.svg/1498px-Google_Sheets_logo_%282014-2020%29.svg.png', // Google Sheets
+        'https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Google_Docs_2020_Logo.svg/174px-Google_Docs_2020_Logo.svg.png', // Google Docs
       ],
     }
   ];

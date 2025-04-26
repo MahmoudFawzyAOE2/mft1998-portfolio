@@ -3,7 +3,7 @@ import React from 'react';
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 
 export interface ServiceProps {
   title: string;
@@ -14,18 +14,23 @@ export interface ServiceProps {
 
 const ServiceCard: React.FC<ServiceProps> = ({ title, description, image, tools }) => {
   return (
-    <Card className="card-hover flex flex-col h-full">
-      <div className="aspect-video w-full overflow-hidden">
-        <img
-          src={image}
-          alt={title}
-          className="w-full h-full object-cover transition-transform hover:scale-105 duration-500"
-        />
+    <Card className="relative pt-12 mt-12">
+      {/* Floating image on top */}
+      <div className="absolute -top-12 left-1/2 -translate-x-1/2">
+        <div className="bg-background rounded-full p-4 shadow-lg">
+          <img
+            src={image}
+            alt={title}
+            className="w-16 h-16 object-contain"
+          />
+        </div>
       </div>
+
       <CardHeader>
-        <CardTitle>{title}</CardTitle>
+        <CardTitle className="text-center">{title}</CardTitle>
       </CardHeader>
-      <CardContent className="flex-grow">
+
+      <CardContent>
         <ul className="list-disc pl-5 space-y-1 text-muted-foreground mb-4">
           {description.map((point, index) => (
             <li key={index}>{point}</li>
@@ -50,11 +55,12 @@ const ServiceCard: React.FC<ServiceProps> = ({ title, description, image, tools 
           </div>
         </div>
       </CardContent>
+
       <CardFooter>
-        <Button asChild>
+        <Button asChild className="w-full">
           <Link
             to={`/contact?subject=Request for ${title}`}
-            className="flex items-center gap-2 w-full justify-center"
+            className="flex items-center gap-2 justify-center"
           >
             Request Service <ArrowRight className="h-4 w-4" />
           </Link>
