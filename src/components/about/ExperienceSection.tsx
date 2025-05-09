@@ -3,6 +3,7 @@ import React from 'react';
 import { Download } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { MapPin } from 'lucide-react';
+import { Card } from '@/components/ui/card';
 
 type Experience = {
   company: string;
@@ -41,17 +42,23 @@ const ExperienceSection: React.FC<ExperienceSectionProps> = ({ experiences }) =>
             </div>
                         
             <div className={`${index % 2 === 0 ? 'md:order-2' : 'md:order-1'}`}>
-              <div className="flex justify-between items-start mb-2">
+              <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-2">
                 <div className="w-full md:w-auto mb-2 md:mb-0">
                   <h3 className="text-2xl font-semibold">{exp.position}</h3>
                   <h4 className="text-xl text-primary">{exp.company}</h4>
                 </div>
-                <div className="w-full md:w-auto text-right">
-                  <p className="text-muted-foreground mt-2">{exp.date}</p>
-                  <div className="flex items-center justify-end gap-1">
-                    <p className="text-muted-foreground">{exp.location}</p>
-                    {exp.location && <MapPin className="h-5 w-5 text-muted-foreground" />}
-                  </div>
+                <div className="w-full md:w-auto md:text-right">
+                  {exp.date && (
+                    <p className="text-muted-foreground italic font-medium text-sm md:text-base bg-secondary/50 px-3 py-1 rounded-full inline-block mb-1">
+                      {exp.date}
+                    </p>
+                  )}
+                  {exp.location && (
+                    <div className="flex items-center gap-1 text-sm md:justify-end">
+                      <MapPin className="h-4 w-4 text-primary" />
+                      <p className="text-muted-foreground font-medium">{exp.location}</p>
+                    </div>
+                  )}
                 </div>
               </div>
               <p className="text-muted-foreground">{exp.details}</p>
