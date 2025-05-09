@@ -43,7 +43,7 @@ const Projects: React.FC = () => {
         "Highlights experience, projects, and services in QA.",
         "Provides a way for visitors to connect for inquiries."
       ],
-      image: "/images/MFTICON.webp", 
+      image: "/images/MFTICON.png", 
       githubUrl: "https://github.com/MahmoudFawzyAOE2/MahmoudFawzyAOE2.github.io",
     }
   ];
@@ -72,7 +72,7 @@ const Projects: React.FC = () => {
       <div className="section-container">
         <h1 className="text-4xl font-bold mb-4 text-center">Projects</h1>
         <p className="text-xl text-muted-foreground mb-12 max-w-3xl mx-auto text-center">
-          Explore my testing projects that have helped companies deliver high-quality software products.
+        Browse through my hands-on projects where I practice testing concepts to refine my technical expertise.
         </p>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">

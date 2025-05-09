@@ -14,11 +14,11 @@ export interface ProjectProps {
 const ProjectCard: React.FC<ProjectProps> = ({ title, description, image, githubUrl }) => {
   return (
     <Card className="card-hover overflow-hidden">
-      <div className="aspect-video w-full overflow-hidden">
+      <div className="bg-sky-50 rounded-lg overflow-hidden shadow-md aspect-[2/1] flex items-center justify-center">
         <img
           src={image}
           alt={title}
-          className="w-full h-full object-cover transition-transform hover:scale-105 duration-500"
+          className="h-full object-contain"
         />
       </div>
       <CardHeader>

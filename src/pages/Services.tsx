@@ -35,9 +35,9 @@ const Services: React.FC = () => {
     {
       title: 'API Manual Testing',
       description: [
-        'Write clear, comprehensive API documentation',
-        'Create user guides for software applications',
-        'Document results and identify response issues'
+        'Execute and validate API endpoints for functionality and accuracy.',
+        'Identify and document response errors, status codes, and data inconsistencies.',
+        'Verify API behavior against requirements and report defects.'
       ],
       image: '/images/api.webp',
       tools: [
@@ -49,9 +49,9 @@ const Services: React.FC = () => {
     {
       title: 'API Test Automation',
       description: [
-        'Create automated tests with RestAssured',
-        'Execute API test cases using TestNG frameworks',
-        'Report the Test Process outcome using Allure'
+        'Develop robust API test scripts using RestAssured for reliable automation.',
+        'Implement and execute test suites with TestNG for scalable validation.',
+        'Generate detailed test reports and analytics using Allure for actionable insights.'
       ],
       image: '/images/api automation.webp',
       tools: [
@@ -64,9 +64,9 @@ const Services: React.FC = () => {
     {
       title: 'Technical Documentation',
       description: [
-        'Write clear, comprehensive technical documentation',
-        'Create user guides for software applications',
-        'Maintain accurate project documentation'
+        'Develop clear, structured technical manuals and API documentation.',
+        'Design intuitive user guides and onboarding materials for software products.',
+        'Update and version-control documentation to align with system changes.'
       ],
       image: '/images/documentation.webp',
       tools: [

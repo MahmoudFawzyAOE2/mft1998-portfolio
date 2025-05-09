@@ -7,28 +7,35 @@ const About: React.FC = () => {
     {
       company: 'Tadarab',
       position: 'Software Tester',
-      details: 'Led a team of 5 QA engineers in implementing automated testing strategies across web and mobile applications. Reduced testing time by 40% while improving bug detection rates by 25%.',
-      image: 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
+      date: 'Oct 2024 - Present',
+      location: 'Alexandria, Egypt - Hybrid',
+      details: 'Analyzed requirements to design test scenarios, executed manual/exploratory testing, and tracked defects in Jira. Built an automation framework covering 10% of core test cases while collaborating with developers to debug issues. Partnered with stakeholders to clarify acceptance criteria and ensure quality alignment.',
+      image: '/images/tadarab2.webp',
     },
     {
       company: 'ITI',
       position: 'Softwware testing trainee',
-      details: 'Designed and implemented comprehensive test automation frameworks using Selenium, Cypress, and Appium. Integrated CI/CD pipelines with automated testing, ensuring 99.5% test coverage.',
-      image: 'https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
+      date: 'May 2024 - Sep 2024 · 4 mos',
+      location: 'El-Mansoura, Egypt · Hybrid',
+      details: 'Gained hands-on experience in software testing fundamentals, including ISTQB concepts, test case design, and defect reporting. Assisted in manual and exploratory testing, contributed to test automation, and collaborated with teams to validate fixes. Developed foundational skills in Java, SQL, and web technologies to support testing and development tasks.',
+      image: '/images/iti3.webp',
     },
     {
       company: 'ESTB',
       position: 'ISTQB Certified Tester',
-      details: 'Performed manual and automated testing for mobile applications across iOS and Android platforms. Created detailed test plans, test cases, and defect reports, improving product quality by 30%.',
-      image: 'https://images.unsplash.com/photo-1587614382346-4ec70e388b28?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
+      date: 'ID: 214234234234',
+      details: ' Certified Tester Foundation Level [CTFL] by the International Software Testing Qualifications Board [ISTQB]. This certification validates my knowledge and skills in software testing principles, techniques, and best practices.',
+      image: '/images/istqb.webp',
     },
     {
       company: 'Alexandria University',
-      position: 'Bachelor of Communication and Electronics Engineering',
-      details: 'Started my career performing manual testing on web applications. Gained experience in functional testing, regression testing, and defect tracking, setting the foundation for my testing career.',
-      image: 'https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
+      position: 'BS of Communication and Electronics Engineering',
+      date: 'Graduated in June 2022',
+      location: 'Alexandria, Egypt - Hybrid',
+      details: 'Studied Electrical & Telecommunication Engineering, mastering subjects like DSP, Microprocessors, and Programming (C/Python). Provided peer tutoring and lab support, creating summaries to simplify complex topics. Developed strong analytical, problem-solving, and communication skills through coursework and collaboration.',
+      image: '/images/FOE.webp',
     },
-  ];
+    ];
   
   return (
     <div className="py-12">

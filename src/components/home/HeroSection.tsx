@@ -14,8 +14,7 @@ const HeroSection: React.FC = () => {
               Hello, I'm <p className="text-primary">Mahmoud Fawzy</p>
             </h1>
             <p className="text-xl text-muted-foreground mb-8">
-              I help companies deliver flawless software through meticulous testing strategies,
-              automation, and quality assurance best practices.
+            I help companies build better software by making sure everything works smoothly through smart testing, automation, and quality checks.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Button asChild>
@@ -29,13 +28,16 @@ const HeroSection: React.FC = () => {
             </div>
           </div>
           <div className="md:pl-8 animate-fade-in">
-            <div className="relative rounded-xl overflow-hidden shadow-xl">
+            <div
+              className="relative rounded-xl overflow-hidden shadow-xl justify-center items-center flex mx-auto"
+              style={{ width: '80%', maxWidth: '300px', height: 'auto' }}
+            >
               <img
-                src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&h=800&q=80"
+                src="/images/MFT_Pic.webp"
                 alt="Software testing professional"
-                className="w-full h-auto"
+                style={{ width: '100%', height: 'auto' }}
               />
-              <div className="absolute inset-0 bg-gradient-to-tr from-background/60 to-transparent"></div>
+              <div className="absolute inset-0 bg-gradient-to-tr from-background/10 to-transparent"></div>
             </div>
           </div>
         </div>
