@@ -1,9 +1,9 @@
 
 import React from 'react';
-import { Download } from 'lucide-react';
+import { Download, MapPin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { MapPin } from 'lucide-react';
 import { Card } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
 
 type Experience = {
   company: string;
@@ -19,6 +19,39 @@ interface ExperienceSectionProps {
 }
 
 const ExperienceSection: React.FC<ExperienceSectionProps> = ({ experiences }) => {
+  // Function to calculate months between start date and now
+  const calculateMonthsToPresent = (startDateStr: string) => {
+    // Extract the start date from format like "Oct 2024 - Present"
+    const startMonth = startDateStr.split(' ')[0]; // e.g., "Oct"
+    const startYear = parseInt(startDateStr.split(' ')[1]); // e.g., "2024"
+    
+    const monthNameToNumber: Record<string, number> = {
+      'Jan': 0, 'Feb': 1, 'Mar': 2, 'Apr': 3, 'May': 4, 'Jun': 5,
+      'Jul': 6, 'Aug': 7, 'Sep': 8, 'Oct': 9, 'Nov': 10, 'Dec': 11
+    };
+    
+    const startDate = new Date(startYear, monthNameToNumber[startMonth], 1);
+    const currentDate = new Date();
+    
+    // Calculate difference in months
+    const months = (currentDate.getFullYear() - startDate.getFullYear()) * 12 + 
+                   (currentDate.getMonth() - startDate.getMonth());
+    
+    return months;
+  };
+  
+  // Function to format the date string
+  const formatDateWithDuration = (dateStr: string) => {
+    if (!dateStr) return '';
+    
+    if (dateStr.includes('Present')) {
+      const months = calculateMonthsToPresent(dateStr);
+      return `${dateStr} - ${months} mos`;
+    }
+    
+    return dateStr;
+  };
+
   return (
     <section className="section-container">
       <h2 className="text-3xl font-bold mb-12 text-center">My Professional Journey</h2>
@@ -50,7 +83,7 @@ const ExperienceSection: React.FC<ExperienceSectionProps> = ({ experiences }) =>
                 <div className="w-full md:w-auto md:text-right">
                   {exp.date && (
                     <p className="text-muted-foreground italic font-medium text-sm md:text-base bg-secondary/50 px-3 py-1 rounded-full inline-block mb-1">
-                      {exp.date}
+                      {formatDateWithDuration(exp.date)}
                     </p>
                   )}
                   {exp.location && (
