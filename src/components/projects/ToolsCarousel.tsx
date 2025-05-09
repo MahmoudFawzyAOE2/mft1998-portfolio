@@ -17,8 +17,12 @@ const ToolsCarousel: React.FC<ToolsCarouselProps> = ({ tools }) => {
               <div className="bg-background p-2 rounded-full">
                 <img 
                   src={tool} 
-                  alt="Testing tool" 
+                  alt={`Tool ${i+1}`}
                   className="h-12 w-12 object-contain"
+                  onError={(e) => {
+                    console.error(`Failed to load image: ${tool}`);
+                    e.currentTarget.src = "/placeholder.svg";
+                  }}
                 />
               </div>
             </div>
@@ -30,8 +34,12 @@ const ToolsCarousel: React.FC<ToolsCarouselProps> = ({ tools }) => {
               <div className="bg-background p-2 rounded-full">
                 <img 
                   src={tool} 
-                  alt="Testing tool" 
+                  alt={`Tool ${i+1}`}
                   className="h-12 w-12 object-contain"
+                  onError={(e) => {
+                    console.error(`Failed to load image: ${tool}`);
+                    e.currentTarget.src = "/placeholder.svg";
+                  }}
                 />
               </div>
             </div>

@@ -22,8 +22,10 @@ const HeroSection: React.FC = () => {
                   Contact Me <ArrowRight className="h-4 w-4" />
                 </Link>
               </Button>
-              <Button variant="outline" className="flex items-center gap-2">
-                <Download className="h-4 w-4" /> Download CV
+              <Button variant="outline" asChild className="flex items-center gap-2">
+                <a href="/docs/Mahmoud Fawzy-CV-SoftwareTester 4-25.pdf" download className="flex items-center gap-2">
+                  <Download className="h-4 w-4" /> Download CV
+                </a>
               </Button>
             </div>
           </div>
