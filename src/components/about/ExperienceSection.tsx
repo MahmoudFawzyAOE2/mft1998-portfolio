@@ -65,11 +65,11 @@ const ExperienceSection: React.FC<ExperienceSectionProps> = ({ experiences }) =>
             } gap-8 items-center`}
           >
             <div className={`${index % 2 === 0 ? 'md:order-1' : 'md:order-2'}`}>
-              <div className="bg-sky-50 rounded-lg overflow-hidden shadow-md aspect-[2/1] flex items-center justify-center">
+              <div className=" card-hover bg-sky-50 rounded-lg overflow-hidden shadow-md aspect-[1.8/1] flex items-center justify-center">
                 <img 
                   src={exp.image} 
                   alt={exp.company} 
-                  className="h-full object-contain"
+                  className="object-contain gap-2 p-4"
                 />
               </div>
             </div>

@@ -14,7 +14,7 @@ export interface ServiceProps {
 
 const ServiceCard: React.FC<ServiceProps> = ({ title, description, image, tools }) => {
   return (
-    <Card className="relative pt-12 mt-12">
+    <Card className=" card-hover relative pt-12 mt-12">
       {/* Floating image on top */}
       <div className="absolute -top-12 left-1/2 -translate-x-1/2">
         <div className="bg-background rounded-full p-4 shadow-lg">

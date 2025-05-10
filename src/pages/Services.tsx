@@ -13,7 +13,7 @@ const Services: React.FC = () => {
       ],
       image: '/images/manual.webp',
       tools: [
-        'https://user-images.githubusercontent.com/25181517/183912952-83784e94-629d-4c34-a961-ae2ae795b662.png', // Jira
+        'https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/jira.png', // Jira
         'https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Google_Sheets_logo_%282014-2020%29.svg/1498px-Google_Sheets_logo_%282014-2020%29.svg.png', // Google Sheets
       ],
     },

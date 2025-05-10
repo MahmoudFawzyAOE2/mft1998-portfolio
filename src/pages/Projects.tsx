@@ -49,22 +49,23 @@ const Projects: React.FC = () => {
   ];
 
   const tools = [
-    'https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg',
-    'https://raw.githubusercontent.com/devicons/devicon/master/icons/c/c-original.svg',
-    'https://user-images.githubusercontent.com/25181517/192106073-90fffafe-3562-4ff9-a37e-c77a2da0ff58.png',
-    'https://cdn-icons-png.flaticon.com/512/226/226777.png',
-    'https://upload.wikimedia.org/wikipedia/commons/2/21/Matlab_Logo.png',
-    'https://user-images.githubusercontent.com/25181517/192158954-f88b5814-d510-4564-b285-dff7d6400dad.png',
+    'https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg', // Python
+    'https://raw.githubusercontent.com/devicons/devicon/master/icons/c/c-original.svg', // C
+    'https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/c++.png', // C++
+    'https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/java.png', // Java
+    'https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/matlab.png', // MATLAB
+    'https://www.svgrepo.com/show/303229/microsoft-sql-server-logo.svg', // Microsoft SQL Server
+    'https://user-images.githubusercontent.com/25181517/192158954-f88b5814-d510-4564-b285-dff7d6400dad.png', 
     'https://user-images.githubusercontent.com/25181517/183898674-75a4a1b1-f960-4ea9-abcb-637170a00a75.png',
-    'https://github.com/marwin1991/profile-technology-icons/assets/76662862/2481dc48-be6b-4ebb-9e8c-3b957efe69fa',
-    'https://www.svgrepo.com/show/354202/postman-icon.svg',
+    'https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/linux.png', // Linux
+    'https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/postman.png', // Postman
     'https://avatars.githubusercontent.com/u/19369327?s=200&v=4',
-    'https://miro.medium.com/v2/resize:fit:1400/1*musVE9e4bgjTWeoRmc-P_w.png',
-    'https://howtodoinjava.com/wp-content/uploads/2014/12/TestNG.png',
-    'https://avatars.githubusercontent.com/u/5879127?s=280&v=4',
+    'https://miro.medium.com/v2/resize:fit:1400/1*musVE9e4bgjTWeoRmc-P_w.png', 
+    'https://howtodoinjava.com/wp-content/uploads/2014/12/TestNG.png', // TestNG
+    'https://avatars.githubusercontent.com/u/5879127?s=280&v=4', // Allure
     'https://user-images.githubusercontent.com/25181517/183914128-3fc88b4a-4ac1-40e6-9443-9a30182379b7.png',
-    'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/IntelliJ_IDEA_Icon.svg/2048px-IntelliJ_IDEA_Icon.svg.png',
-    'https://user-images.githubusercontent.com/25181517/183912952-83784e94-629d-4c34-a961-ae2ae795b662.png'
+    'https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/intellij.png', // IntelliJ IDEA
+    'https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/jira.png', // Jira
   ];
 
   return (

@@ -26,8 +26,10 @@ const Header: React.FC = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
-            <span className="text-2xl font-bold text-primary">MFT</span>
-            <span className="text-xl font-semibold">Portfolio</span>
+            <img
+              src="/images/MFTICONBLU.png"
+              alt="Logo"
+              className="h-14 w-14 rounded-full border-2 border-cyan-600"></img>
           </Link>
 
           {/* Desktop Navigation */}
