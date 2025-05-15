@@ -18,7 +18,7 @@ const About: React.FC = () => {
       date: 'May 2024 - Sep 2024 · 4 mos',
       location: 'El-Mansoura, Egypt · Hybrid',
       details: 'Gained hands-on experience in software testing fundamentals, including ISTQB concepts, test case design, and defect reporting. Assisted in manual and exploratory testing, contributed to test automation, and collaborated with teams to validate fixes. Developed foundational skills in Java, SQL, and web technologies to support testing and development tasks.',
-      image: '/images/iti3.webp',
+      image: '/images/ITI3.webp',
     },
     {
       company: 'ESTB',
