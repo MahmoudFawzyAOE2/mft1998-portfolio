@@ -1,4 +1,3 @@
-
 import React from 'react';
 
 interface ToolsCarouselProps {
@@ -6,6 +5,16 @@ interface ToolsCarouselProps {
 }
 
 const ToolsCarousel: React.FC<ToolsCarouselProps> = ({ tools }) => {
+  // This function helps handle external image URLs
+  const getImageUrl = (url: string) => {
+    // If it's already an absolute URL (starts with http), use as is
+    if (url.startsWith('http')) {
+      return url;
+    }
+    // Otherwise, prepend the base path
+    return `/mft1998-portfolio${url}`;
+  };
+
   return (
     <section className="py-12 bg-secondary overflow-hidden">
       <h3 className="text-center text-2xl font-bold mb-8">Technologies & Tools</h3>

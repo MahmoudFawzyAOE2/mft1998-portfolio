@@ -27,9 +27,14 @@ const Header: React.FC = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
             <img
-              src="/images/MFTICONBLU.png"
+              src="/mft1998-portfolio/images/MFTICONBLU.png"
               alt="Logo"
-              className="h-14 w-14 rounded-full border-2 border-cyan-600"></img>
+              className="h-14 w-14 rounded-full border-2 border-cyan-600"
+              onError={(e) => {
+                console.error('Failed to load logo');
+                e.currentTarget.src = "/mft1998-portfolio/placeholder.svg";
+              }}
+            />
           </Link>
 
           {/* Desktop Navigation */}
