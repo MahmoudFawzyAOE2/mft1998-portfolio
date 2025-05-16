@@ -1,4 +1,3 @@
-
 import React from 'react';
 import ProjectCard, { ProjectProps } from '@/components/projects/ProjectCard';
 import ToolsCarousel from '@/components/projects/ToolsCarousel';
@@ -13,7 +12,7 @@ const Projects: React.FC = () => {
         "Performs SRS analysis, unit, integration, and system testing.",
         "Implement and executes test cases and reports bugs."
       ],
-      image: "/images/Manual Project.webp",
+      image: "/mft1998-portfolio/images/Manual Project.webp",
       githubUrl: "https://github.com/MahmoudFawzyAOE2/Guru99-SW-Tesing-Project-1",
     },
     {
@@ -23,7 +22,7 @@ const Projects: React.FC = () => {
         "Streamlines the testing process for Sutra E-commerce.",
         "Built with Selenium WebDriver for robust automation."
       ],
-      image: "/images/Web Automation project.webp", 
+      image: "/mft1998-portfolio/images/Web Automation project.webp", 
       githubUrl: "https://github.com/MahmoudFawzyAOE2/Sutra_ShoppingWebsite_WebAutomation",
     },
     {
@@ -33,7 +32,7 @@ const Projects: React.FC = () => {
         "Ensures reliable and efficient API testing.",
         "Built with RestAssured for robust API interaction."
       ],
-      image: "/images/Trello project.webp", 
+      image: "/mft1998-portfolio/images/Trello project.webp", 
       githubUrl: "https://github.com/MahmoudFawzyAOE2/Trello_API_Testing_Project",
     },
     {
@@ -43,29 +42,29 @@ const Projects: React.FC = () => {
         "Highlights experience, projects, and services in QA.",
         "Provides a way for visitors to connect for inquiries."
       ],
-      image: "/images/MFTICON.png", 
+      image: "/mft1998-portfolio/images/MFTICON.png", 
       githubUrl: "https://github.com/MahmoudFawzyAOE2/MahmoudFawzyAOE2.github.io",
     }
   ];
 
   const tools = [
-    'https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg', // Python
-    'https://raw.githubusercontent.com/devicons/devicon/master/icons/c/c-original.svg', // C
-    'https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/c++.png', // C++
-    'https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/java.png', // Java
-    'https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/matlab.png', // MATLAB
-    'https://www.svgrepo.com/show/303229/microsoft-sql-server-logo.svg', // Microsoft SQL Server
+    'https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg',
+    'https://raw.githubusercontent.com/devicons/devicon/master/icons/c/c-original.svg',
+    'https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/c++.png',
+    'https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/java.png',
+    'https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/matlab.png',
+    'https://www.svgrepo.com/show/303229/microsoft-sql-server-logo.svg',
     'https://user-images.githubusercontent.com/25181517/192158954-f88b5814-d510-4564-b285-dff7d6400dad.png', 
     'https://user-images.githubusercontent.com/25181517/183898674-75a4a1b1-f960-4ea9-abcb-637170a00a75.png',
-    'https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/linux.png', // Linux
-    'https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/postman.png', // Postman
+    'https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/linux.png',
+    'https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/postman.png',
     'https://avatars.githubusercontent.com/u/19369327?s=200&v=4',
     'https://miro.medium.com/v2/resize:fit:1400/1*musVE9e4bgjTWeoRmc-P_w.png', 
-    'https://howtodoinjava.com/wp-content/uploads/2014/12/TestNG.png', // TestNG
-    'https://avatars.githubusercontent.com/u/5879127?s=280&v=4', // Allure
+    'https://howtodoinjava.com/wp-content/uploads/2014/12/TestNG.png',
+    'https://avatars.githubusercontent.com/u/5879127?s=280&v=4',
     'https://user-images.githubusercontent.com/25181517/183914128-3fc88b4a-4ac1-40e6-9443-9a30182379b7.png',
-    'https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/intellij.png', // IntelliJ IDEA
-    'https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/jira.png', // Jira
+    'https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/intellij.png',
+    'https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/jira.png',
   ];
 
   return (
@@ -91,4 +90,3 @@ const Projects: React.FC = () => {
 };
 
 export default Projects;
-

@@ -1,3 +1,4 @@
+
 import React from 'react';
 
 interface ToolsCarouselProps {
@@ -24,7 +25,7 @@ const ToolsCarousel: React.FC<ToolsCarouselProps> = ({ tools }) => {
                   className="h-12 w-12 object-contain"
                   onError={(e) => {
                     console.error(`Failed to load image: ${tool}`);
-                    e.currentTarget.src = "/placeholder.svg";
+                    e.currentTarget.src = "/mft1998-portfolio/placeholder.svg";
                   }}
                 />
               </div>
@@ -46,7 +47,7 @@ const ToolsCarousel: React.FC<ToolsCarouselProps> = ({ tools }) => {
                   className="h-12 w-12 object-contain"
                   onError={(e) => {
                     console.error(`Failed to load image: ${tool}`);
-                    e.currentTarget.src = "/placeholder.svg";
+                    e.currentTarget.src = "/mft1998-portfolio/placeholder.svg";
                   }}
                 />
               </div>

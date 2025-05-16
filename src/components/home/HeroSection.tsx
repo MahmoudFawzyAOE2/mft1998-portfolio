@@ -23,7 +23,7 @@ const HeroSection: React.FC = () => {
                 </Link>
               </Button>
               <Button variant="outline" asChild className="flex items-center gap-2">
-                <a href="/docs/Mahmoud Fawzy-CV-SoftwareTester 4-25.pdf" download className="flex items-center gap-2">
+                <a href="/mft1998-portfolio/docs/Mahmoud Fawzy-CV-SoftwareTester 4-25.pdf" download className="flex items-center gap-2">
                   <Download className="h-4 w-4" /> Download CV
                 </a>
               </Button>
@@ -35,7 +35,7 @@ const HeroSection: React.FC = () => {
               style={{ width: '80%', maxWidth: '300px', height: 'auto' }}
             >
               <img
-                src="/images/MFT_Pic.webp"
+                src="/mft1998-portfolio/images/MFT_Pic.webp"
                 alt="Software testing professional"
                 style={{ width: '100%', height: 'auto' }}
               />
