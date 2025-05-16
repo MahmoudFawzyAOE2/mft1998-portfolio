@@ -12,7 +12,7 @@ const Projects: React.FC = () => {
         "Performs SRS analysis, unit, integration, and system testing.",
         "Implement and executes test cases and reports bugs."
       ],
-      image: "/mft1998-portfolio/images/Manual Project.webp",
+      image: "https://raw.githubusercontent.com/MahmoudFawzyAOE2/mft1998-portfolio/refs/heads/main/images/Manual%20Project.webp",
       githubUrl: "https://github.com/MahmoudFawzyAOE2/Guru99-SW-Tesing-Project-1",
     },
     {
@@ -22,7 +22,7 @@ const Projects: React.FC = () => {
         "Streamlines the testing process for Sutra E-commerce.",
         "Built with Selenium WebDriver for robust automation."
       ],
-      image: "/mft1998-portfolio/images/Web Automation project.webp", 
+      image: "https://raw.githubusercontent.com/MahmoudFawzyAOE2/mft1998-portfolio/refs/heads/main/images/Web%20Automation%20project.webp", 
       githubUrl: "https://github.com/MahmoudFawzyAOE2/Sutra_ShoppingWebsite_WebAutomation",
     },
     {
@@ -32,7 +32,7 @@ const Projects: React.FC = () => {
         "Ensures reliable and efficient API testing.",
         "Built with RestAssured for robust API interaction."
       ],
-      image: "/mft1998-portfolio/images/Trello project.webp", 
+      image: "https://raw.githubusercontent.com/MahmoudFawzyAOE2/mft1998-portfolio/refs/heads/main/images/Trello%20project.webp", 
       githubUrl: "https://github.com/MahmoudFawzyAOE2/Trello_API_Testing_Project",
     },
     {
@@ -42,7 +42,7 @@ const Projects: React.FC = () => {
         "Highlights experience, projects, and services in QA.",
         "Provides a way for visitors to connect for inquiries."
       ],
-      image: "/mft1998-portfolio/images/MFTICON.png", 
+      image: "https://raw.githubusercontent.com/MahmoudFawzyAOE2/mft1998-portfolio/refs/heads/main/images/MFTICON.png", 
       githubUrl: "https://github.com/MahmoudFawzyAOE2/MahmoudFawzyAOE2.github.io",
     }
   ];

@@ -1,4 +1,3 @@
-
 import React from 'react';
 import ServiceCard, { ServiceProps } from '@/components/services/ServiceCard';
 
@@ -11,7 +10,7 @@ const Services: React.FC = () => {
         'Perform cross-browser/device testing for consistency',
         'Document bugs and collaborate for resolution'
       ],
-      image: '/mft1998-portfolio/images/manual.webp',
+      image: 'https://raw.githubusercontent.com/MahmoudFawzyAOE2/mft1998-portfolio/refs/heads/main/images/manual.webp',
       tools: [
         'https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/jira.png', // Jira
         'https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Google_Sheets_logo_%282014-2020%29.svg/1498px-Google_Sheets_logo_%282014-2020%29.svg.png', // Google Sheets
@@ -24,7 +23,7 @@ const Services: React.FC = () => {
         'Implement TestNG frameworks for test execution',
         'Use Allure to generate comprehensive reports'
       ],
-      image: '/mft1998-portfolio/images/automation.webp',
+      image: 'https://raw.githubusercontent.com/MahmoudFawzyAOE2/mft1998-portfolio/refs/heads/main/images/automation.webp',
       tools: [
         'https://cdn-icons-png.flaticon.com/512/226/226777.png', // Java
         'https://howtodoinjava.com/wp-content/uploads/2014/12/TestNG.png', // TestNG
@@ -39,7 +38,7 @@ const Services: React.FC = () => {
         'Identify and document response errors, status codes, and data inconsistencies.',
         'Verify API behavior against requirements and report defects.'
       ],
-      image: '/mft1998-portfolio/images/api.webp',
+      image: 'https://raw.githubusercontent.com/MahmoudFawzyAOE2/mft1998-portfolio/refs/heads/main/images/api.webp',
       tools: [
         'https://www.svgrepo.com/show/354202/postman-icon.svg', // Postman
         'https://user-images.githubusercontent.com/25181517/183912952-83784e94-629d-4c34-a961-ae2ae795b662.png', // Jira
@@ -53,7 +52,7 @@ const Services: React.FC = () => {
         'Implement and execute test suites with TestNG for scalable validation.',
         'Generate detailed test reports and analytics using Allure for actionable insights.'
       ],
-      image: '/mft1998-portfolio/images/api automation.webp',
+      image: 'https://raw.githubusercontent.com/MahmoudFawzyAOE2/mft1998-portfolio/refs/heads/main/images/api%20automation.webp',
       tools: [
         'https://cdn-icons-png.flaticon.com/512/226/226777.png', // Java
         'https://howtodoinjava.com/wp-content/uploads/2014/12/TestNG.png', // TestNG
@@ -68,7 +67,7 @@ const Services: React.FC = () => {
         'Design intuitive user guides and onboarding materials for software products.',
         'Update and version-control documentation to align with system changes.'
       ],
-      image: '/mft1998-portfolio/images/documentation.webp',
+      image: 'https://raw.githubusercontent.com/MahmoudFawzyAOE2/mft1998-portfolio/refs/heads/main/images/documentation.webp',
       tools: [
         'https://user-images.githubusercontent.com/25181517/189715289-df3ee512-6eca-463f-a0f4-c10d94a06b2f.png', // Figma
         'https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Google_Sheets_logo_%282014-2020%29.svg/1498px-Google_Sheets_logo_%282014-2020%29.svg.png', // Google Sheets
