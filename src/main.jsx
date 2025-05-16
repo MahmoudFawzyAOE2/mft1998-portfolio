@@ -1,13 +1,16 @@
-import { createRoot } from 'react-dom/client'
-import App from './App.tsx'
-import './index.css'
 
-createRoot(document.getElementById("root")).render(<App />);
-<React.StrictMode>
-  <BrowserRouter basename="/mft1998-portfolio/">
-    <Routes>
-      <Route path="*" element={<App />} />
-    </Routes>
-  </BrowserRouter>
-</React.StrictMode>
+import React from 'react';
+import { createRoot } from 'react-dom/client';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import App from './App.tsx';
+import './index.css';
 
+createRoot(document.getElementById("root")).render(
+  <React.StrictMode>
+    <BrowserRouter basename="/mft1998-portfolio/">
+      <Routes>
+        <Route path="*" element={<App />} />
+      </Routes>
+    </BrowserRouter>
+  </React.StrictMode>
+);
