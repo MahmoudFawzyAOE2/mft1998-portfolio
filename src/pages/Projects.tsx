@@ -43,7 +43,7 @@ const Projects: React.FC = () => {
         "Provides a way for visitors to connect for inquiries."
       ],
       image: "https://raw.githubusercontent.com/MahmoudFawzyAOE2/mft1998-portfolio/refs/heads/main/images/MFTICON.png", 
-      githubUrl: "https://github.com/MahmoudFawzyAOE2/MahmoudFawzyAOE2.github.io",
+      githubUrl: "https://github.com/MahmoudFawzyAOE2/mft1998-portfolio",
     }
   ];
 
