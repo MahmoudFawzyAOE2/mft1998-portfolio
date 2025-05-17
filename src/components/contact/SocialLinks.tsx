@@ -23,7 +23,7 @@ const SocialLinks: React.FC = () => {
     },
     {
       name: 'Email',
-      url: 'mailto:1998mft1998Ggmail.com',
+      url: 'mailto:1998mft1998@gmail.com',
       icon: <Mail className="h-5 w-5" />,
     },
     {
