@@ -18,7 +18,24 @@
     
     <!-- Favicon -->
     <link rel="icon" href="https://raw.githubusercontent.com/MahmoudFawzyAOE2/mft1998-portfolio/refs/heads/main/images/MFTICONBLU.png" type="image/png">
-    <script type="module" crossorigin src="/mft1998-portfolio/assets/index-8W5aEh3k.js"></script>
+    
+    <!-- Single Page App Redirect Script -->
+    <script type="text/javascript">
+      // Single Page Apps for GitHub Pages
+      // MIT License
+      // https://github.com/rafgraph/spa-github-pages
+      (function(l) {
+        if (l.search[1] === '/' ) {
+          var decoded = l.search.slice(1).split('&').map(function(s) { 
+            return s.replace(/~and~/g, '&')
+          }).join('?');
+          window.history.replaceState(null, null,
+              l.pathname.slice(0, -1) + decoded + l.hash
+          );
+        }
+      }(window.location))
+    </script>
+    <script type="module" crossorigin src="/mft1998-portfolio/assets/index-CZCN03dB.js"></script>
     <link rel="stylesheet" crossorigin href="/mft1998-portfolio/assets/index-CUc8z14P.css">
   </head>
 
