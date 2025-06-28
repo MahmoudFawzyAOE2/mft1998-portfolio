@@ -18,7 +18,7 @@ const Projects: React.FC = () => {
     {
       title: "Sutra E-commerce Test Automation",
       description: [
-        "Automates testing of multiple core functionalities.",
+        "Smoke Testing Suite of 32 Test Cases for main functionalities.",
         "Streamlines the testing process for Sutra E-commerce.",
         "Built with Selenium WebDriver for robust automation."
       ],
@@ -28,7 +28,7 @@ const Projects: React.FC = () => {
     {
       title: "Trello API Test Automation",
       description: [
-        "Automates testing of Trello API functionalities.",
+        "Regression Test Suite of 27 Tests covering main endpoints.",
         "Ensures reliable and efficient API testing.",
         "Built with RestAssured for robust API interaction."
       ],
@@ -60,7 +60,7 @@ const Projects: React.FC = () => {
     'https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/postman.png',
     'https://avatars.githubusercontent.com/u/19369327?s=200&v=4',
     'https://miro.medium.com/v2/resize:fit:1400/1*musVE9e4bgjTWeoRmc-P_w.png', 
-    'https://howtodoinjava.com/wp-content/uploads/2014/12/TestNG.png',
+    'https://raw.githubusercontent.com/MahmoudFawzyAOE2/mft1998-portfolio/refs/heads/main/images/TestNG.png',
     'https://avatars.githubusercontent.com/u/5879127?s=280&v=4',
     'https://user-images.githubusercontent.com/25181517/183914128-3fc88b4a-4ac1-40e6-9443-9a30182379b7.png',
     'https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/intellij.png',
