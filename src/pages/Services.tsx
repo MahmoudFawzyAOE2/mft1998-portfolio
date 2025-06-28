@@ -26,7 +26,7 @@ const Services: React.FC = () => {
       image: 'https://raw.githubusercontent.com/MahmoudFawzyAOE2/mft1998-portfolio/refs/heads/main/images/automation.webp',
       tools: [
         'https://cdn-icons-png.flaticon.com/512/226/226777.png', // Java
-        'https://howtodoinjava.com/wp-content/uploads/2014/12/TestNG.png', // TestNG
+        'https://raw.githubusercontent.com/MahmoudFawzyAOE2/mft1998-portfolio/refs/heads/main/images/TestNG.png', // TestNG
         'https://miro.medium.com/v2/resize:fit:1400/1*musVE9e4bgjTWeoRmc-P_w.png', // Selenium
         'https://avatars.githubusercontent.com/u/5879127?s=280&v=4', // Allure
       ],
@@ -55,7 +55,7 @@ const Services: React.FC = () => {
       image: 'https://raw.githubusercontent.com/MahmoudFawzyAOE2/mft1998-portfolio/refs/heads/main/images/api%20automation.webp',
       tools: [
         'https://cdn-icons-png.flaticon.com/512/226/226777.png', // Java
-        'https://howtodoinjava.com/wp-content/uploads/2014/12/TestNG.png', // TestNG
+        'https://raw.githubusercontent.com/MahmoudFawzyAOE2/mft1998-portfolio/refs/heads/main/images/TestNG.png', // TestNG
         'https://avatars.githubusercontent.com/u/19369327?s=200&v=4', // RestAssured
         'https://avatars.githubusercontent.com/u/5879127?s=280&v=4', // Allure
       ],
