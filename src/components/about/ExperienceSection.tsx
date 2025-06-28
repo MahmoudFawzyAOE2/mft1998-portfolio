@@ -101,7 +101,7 @@ const ExperienceSection: React.FC<ExperienceSectionProps> = ({ experiences }) =>
       
       <div className="mt-16 text-center">
         <Button asChild className="flex items-center gap-2">
-          <a href="/mft1998-portfolio/docs/Mahmoud Fawzy-CV-SoftwareTester 4-25.pdf" download>
+          <a href="https://raw.githubusercontent.com/MahmoudFawzyAOE2/mft1998-portfolio/refs/heads/main/docs/Mahmoud%20Fawzy-CV-SoftwareTester%20.pdf" download>
             <Download className="h-4 w-4" /> Download Resume
           </a>
         </Button>

@@ -23,7 +23,7 @@ const HeroSection: React.FC = () => {
                 </Link>
               </Button>
               <Button variant="outline" asChild className="flex items-center gap-2">
-                <a href="https://raw.githubusercontent.com/MahmoudFawzyAOE2/mft1998-portfolio/refs/heads/main/docs/Mahmoud%20Fawzy-CV-SoftwareTester%204-25.pdf" download className="flex items-center gap-2">
+                <a href="https://raw.githubusercontent.com/MahmoudFawzyAOE2/mft1998-portfolio/refs/heads/main/docs/Mahmoud%20Fawzy-CV-SoftwareTester%20.pdf" download className="flex items-center gap-2">
                   <Download className="h-4 w-4" /> Download CV
                 </a>
               </Button>
