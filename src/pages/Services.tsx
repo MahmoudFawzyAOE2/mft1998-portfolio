@@ -77,7 +77,7 @@ const Services: React.FC = () => {
   ];
   
   return (
-    <div className="py-12">
+    <div className="py-18">
       <div className="section-container">
         <h1 className="text-4xl font-bold mb-4 text-center">Services</h1>
         <p className="text-xl text-muted-foreground mb-12 max-w-3xl mx-auto text-center">

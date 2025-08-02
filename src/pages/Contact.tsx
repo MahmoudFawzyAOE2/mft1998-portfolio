@@ -5,7 +5,7 @@ import SocialLinks from '@/components/contact/SocialLinks';
 
 const Contact: React.FC = () => {
   return (
-    <div className="py-12">
+    <div className="py-18">
       <div className="section-container">
         <h1 className="text-4xl font-bold mb-4 text-center">Contact Me</h1>
         <p className="text-xl text-muted-foreground mb-12 max-w-3xl mx-auto text-center">

@@ -6,7 +6,7 @@ const About: React.FC = () => {
     {
       company: 'Tadarab',
       position: 'Software Tester',
-      date: 'Oct 2024 - Present',
+      date: 'Oct 2024 - July 2025 - 10 mos',
       location: 'Alexandria, Egypt - Hybrid',
       details: 'Analyzed requirements to design test scenarios, executed manual/exploratory testing, and tracked defects in Jira. Built an automation framework covering 10% of core test cases while collaborating with developers to debug issues. Partnered with stakeholders to clarify acceptance criteria and ensure quality alignment.',
       image: 'https://raw.githubusercontent.com/MahmoudFawzyAOE2/mft1998-portfolio/refs/heads/main/images/tadarab2.webp',
@@ -37,10 +37,10 @@ const About: React.FC = () => {
     ];
   
   return (
-    <div className="py-12">
+    <div className="py-18">
       <div className="section-container">
         <h1 className="text-4xl font-bold mb-4 text-center">About Me</h1>
-        <p className="text-xl text-muted-foreground mb-12 max-w-3xl mx-auto text-center">
+        <p className="text-xl text-muted-foreground max-w-3xl mx-auto text-center">
         As a junior software tester, I'm dedicated to ensuring software quality and excited to keep growing while helping deliver great user experiences.
         </p>
       </div>

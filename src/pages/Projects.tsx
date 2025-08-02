@@ -6,6 +6,16 @@ const Projects: React.FC = () => {
   // Static project data with updated images
   const staticProjects: ProjectProps[] = [
     {
+      title: "Tadarab V3",
+      description: [
+        "New version of Tadarab's platform with enhanced features.",
+        "Created  more than 600 test cases for all functionalities.",
+        "Implemented automation framework for 10% of test cases.",
+      ],
+      image: "https://raw.githubusercontent.com/MahmoudFawzyAOE2/mft1998-portfolio/refs/heads/main/images/tadarab2.webp",
+      githubUrl: "Not Yet Available",
+    },    
+    {
       title: "Testing The Guru99 Bank Demo Website",
       description: [
         "Tests multiple versions of Guru99 Bank Demo website.",
@@ -49,7 +59,7 @@ const Projects: React.FC = () => {
 
   const tools = [
     'https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg',
-    'https://raw.githubusercontent.com/devicons/devicon/master/icons/c/c-original.svg',
+    'https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/c.png',
     'https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/c++.png',
     'https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/java.png',
     'https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/matlab.png',
@@ -68,7 +78,7 @@ const Projects: React.FC = () => {
   ];
 
   return (
-    <div className="py-12">
+    <div className="py-18">
       <div className="section-container">
         <h1 className="text-4xl font-bold mb-4 text-center">Projects</h1>
         <p className="text-xl text-muted-foreground mb-12 max-w-3xl mx-auto text-center">

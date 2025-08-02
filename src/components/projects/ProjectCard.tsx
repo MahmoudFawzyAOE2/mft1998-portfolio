@@ -12,13 +12,15 @@ export interface ProjectProps {
 }
 
 const ProjectCard: React.FC<ProjectProps> = ({ title, description, image, githubUrl }) => {
+    const isGitHubAvailable = githubUrl !== "Not Yet Available";
+    
   return (
     <Card className="card-hover overflow-hidden">
-      <div className="bg-sky-50 rounded-lg overflow-hidden shadow-md aspect-[2/1] flex items-center justify-center">
+      <div className="card-hover bg-sky-50 rounded-lg overflow-hidden shadow-md aspect-[2/1] flex items-center justify-center">
         <img
           src={image}
           alt={title}
-          className="h-full object-contain"
+          className="h-full object-contain gap-2 p-4"
         />
       </div>
       <CardHeader>
@@ -32,17 +34,24 @@ const ProjectCard: React.FC<ProjectProps> = ({ title, description, image, github
         </ul>
       </CardContent>
       <CardFooter>
-        <Button asChild>
-          <a 
-            href={githubUrl} 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="flex items-center gap-2"
-          >
-            <Github className="h-4 w-4" /> View on GitHub
-          </a>
-        </Button>
-      </CardFooter>
+  {githubUrl === "Not Yet Available" ? (
+    <Button disabled className="flex items-center gap-2 cursor-not-allowed opacity-60">
+      Not Yet Available
+    </Button>
+  ) : (
+    <Button asChild>
+      <a 
+        href={githubUrl} 
+        target="_blank" 
+        rel="noopener noreferrer"
+        className="flex items-center gap-2"
+      >
+        {githubUrl.includes("github.com") && <Github className="h-4 w-4" />}
+        View on GitHub
+      </a>
+    </Button>
+  )}
+</CardFooter>
     </Card>
   );
 };
