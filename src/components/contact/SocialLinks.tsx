@@ -46,6 +46,7 @@ const SocialLinks: React.FC = () => {
           >
             <a
               href={link.url}
+              id={`btn-${link.name.toLowerCase()}`} 
               target="_blank"
               rel="noopener noreferrer"
             >
