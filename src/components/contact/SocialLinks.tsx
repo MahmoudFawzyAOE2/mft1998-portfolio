@@ -40,7 +40,6 @@ const SocialLinks: React.FC = () => {
         {socialLinks.map((link) => (
           <Button
             key={link.name}
-            id={`btn-${link.name.toLowerCase()}`}
             variant="outline"
             asChild
             className="flex items-center gap-2"
@@ -51,6 +50,7 @@ const SocialLinks: React.FC = () => {
                 target: "_blank",
                 rel: "noopener noreferrer",
               })}
+              id={`btn-${link.name.toLowerCase()}`}
             >
               {link.icon}
               {link.name}
