@@ -40,15 +40,17 @@ const SocialLinks: React.FC = () => {
         {socialLinks.map((link) => (
           <Button
             key={link.name}
+            id={`btn-${link.name.toLowerCase()}`}
             variant="outline"
             asChild
             className="flex items-center gap-2"
           >
             <a
               href={link.url}
-              id={`btn-${link.name.toLowerCase()}`} 
-              target="_blank"
-              rel="noopener noreferrer"
+              {...(link.name !== "Email" && {
+                target: "_blank",
+                rel: "noopener noreferrer",
+              })}
             >
               {link.icon}
               {link.name}
