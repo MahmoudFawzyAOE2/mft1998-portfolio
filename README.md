@@ -3,7 +3,7 @@
 Welcome to my personal portfolio website! 🚀  
 This project highlights who I am, what I do, and the work I’m passionate about.
 
-## ✨ About
+## ✨ About 
 
 I used **Lovable AI** to generate the initial structure and layout of the main pages.  
 From there, I explored the codebase and its hierarchy to understand the flow and structure, then customized and refined the site using a mix of personal coding ("vibe coding") and suggestions from **GitHub Copilot**.
