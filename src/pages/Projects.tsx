@@ -16,6 +16,16 @@ const Projects: React.FC = () => {
       githubUrl: "Not Yet Available",
     },    
     {
+      title: "Test Automation Framework with CI/CD",
+      description: [
+        "Enhanced Test Automation Framework for My Portfolio.",
+        "Improved Utility classes and Page Object Model structure.",
+        "Integrated CI/CD with GitHub Actions for Testing and Reporting.",
+      ],
+      image: "https://raw.githubusercontent.com/MahmoudFawzyAOE2/mft1998-portfolio/refs/heads/main/images/MFTICONBLU_BugR.png",
+      githubUrl: "https://github.com/MahmoudFawzyAOE2/mft1998-portfolio-TestAutomation",
+    }, 
+    {
       title: "Testing The Guru99 Bank Demo Website",
       description: [
         "Tests multiple versions of Guru99 Bank Demo website.",
