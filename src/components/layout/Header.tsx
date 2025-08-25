@@ -27,6 +27,7 @@ const Header: React.FC = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
             <img
+              id="logo"
               src="https://raw.githubusercontent.com/MahmoudFawzyAOE2/mft1998-portfolio/refs/heads/main/images/MFTICONBLU.png"
               alt="Logo"
               className="h-14 w-14 rounded-full border-2 border-cyan-600"
@@ -41,6 +42,7 @@ const Header: React.FC = () => {
           <nav className="hidden md:flex items-center space-x-1">
             {navLinks.map((link) => (
               <Link
+                id= {`nav-${link.name.toLowerCase()}`}
                 key={link.name}
                 to={link.path}
                 className={`px-3 py-2 text-sm font-medium rounded-md transition-colors ${
@@ -70,6 +72,7 @@ const Header: React.FC = () => {
           {/* Mobile Menu Button */}
           <div className="flex md:hidden items-center space-x-2">
             <Button
+              id="theme-toggle-button"
               variant="ghost"
               size="icon"
               onClick={toggleTheme}
@@ -82,6 +85,7 @@ const Header: React.FC = () => {
               )}
             </Button>
             <Button
+              id="close-menu-button"
               variant="ghost"
               size="icon"
               onClick={toggleMenu}
@@ -101,6 +105,7 @@ const Header: React.FC = () => {
           <nav className="md:hidden mt-4 pb-4 flex flex-col space-y-2">
             {navLinks.map((link) => (
               <Link
+                id= {`mobile-nav-${link.name.toLowerCase()}`}
                 key={link.name}
                 to={link.path}
                 className={`px-3 py-2 text-sm font-medium rounded-md transition-colors ${
