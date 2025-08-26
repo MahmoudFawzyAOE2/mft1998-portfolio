@@ -13,7 +13,8 @@ const SocialLinks: React.FC = () => {
   const socialLinks: SocialLink[] = [
     {
       name: 'LinkedIn',
-      url: 'https://linkedin.com/in/mft1998',
+      // url: 'https://linkedin.com/in/mft1998',
+      url: 'https://google.com',
       icon: <Linkedin className="h-5 w-5" />,
     },
     {
