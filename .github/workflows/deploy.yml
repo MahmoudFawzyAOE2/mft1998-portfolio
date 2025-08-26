@@ -52,6 +52,7 @@ jobs:
           publish_dir: ./dist
 
   trigger-tests:
+    needs: [build, deploy]
     runs-on: ubuntu-latest
     steps:
       - name: Trigger Test Automation workflow
