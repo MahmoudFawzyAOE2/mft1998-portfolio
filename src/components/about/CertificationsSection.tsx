@@ -24,7 +24,7 @@ const CertificationsSection: React.FC<CertificationsSectionProps> = ({ certifica
           <Card key={index} className="card-hover overflow-hidden">
             <CardContent className="p-6">
               <div className="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-6 items-center">
-                <div className="bg-secondary/30 rounded-lg overflow-hidden aspect-[1.5/1] flex items-center justify-center p-4">
+                <div className="card-hover bg-sky-50 rounded-lg overflow-hidden aspect-[1.5/1] flex items-center justify-center p-4">
                   <img 
                     src={cert.image} 
                     alt={cert.certificateName} 

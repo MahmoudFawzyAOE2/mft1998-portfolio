@@ -21,13 +21,6 @@ const About: React.FC = () => {
       image: 'https://raw.githubusercontent.com/MahmoudFawzyAOE2/mft1998-portfolio/refs/heads/main/images/ITI3.webp',
     },
     {
-      company: 'ESTB',
-      position: 'ISTQB Certified Tester',
-      date: 'ID: 214234234234',
-      details: ' Certified Tester Foundation Level [CTFL] by the International Software Testing Qualifications Board [ISTQB]. This certification validates my knowledge and skills in software testing principles, techniques, and best practices.',
-      image: 'https://raw.githubusercontent.com/MahmoudFawzyAOE2/mft1998-portfolio/refs/heads/main/images/istqb.webp',
-    },
-    {
       company: 'Alexandria University',
       position: 'BS of Communication and Electronics Engineering',
       date: 'Graduated in June 2022',
@@ -39,11 +32,18 @@ const About: React.FC = () => {
 
   const certifications = [
     {
-      certificateName: 'ISTQB MAT',
-      date: 'June 2022',
-      credentialId: '234234234235345',
-      image: 'https://raw.githubusercontent.com/MahmoudFawzyAOE2/mft1998-portfolio/refs/heads/main/images/istqb.webp',
+      certificateName: 'ISTQB CTFL v4',
+      date: 'January 2024',
+      credentialId: '240117071',
+      image: 'https://raw.githubusercontent.com/MahmoudFawzyAOE2/mft1998-portfolio/refs/heads/main/images/ISTQBCTFL.png',
     },
+    {
+      certificateName: 'ISTQB MAT',
+      date: 'August 2025',
+      credentialId: '250806034',
+      image: 'https://raw.githubusercontent.com/MahmoudFawzyAOE2/mft1998-portfolio/refs/heads/main/images/ISTQBMAT.png',
+    }
+
   ];
   
   return (
