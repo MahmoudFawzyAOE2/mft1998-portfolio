@@ -23,12 +23,12 @@ const CertificationsSection: React.FC<CertificationsSectionProps> = ({ certifica
         {certifications.map((cert, index) => (
           <Card key={index} className="card-hover overflow-hidden">
             <CardContent className="p-6">
-              <div className="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-6 items-center">
+              <div className="grid grid-cols-1 md:grid-cols-[2fr_2fr] gap-6 items-center">
                 <div className="card-hover bg-sky-50 rounded-lg overflow-hidden aspect-[1.5/1] flex items-center justify-center p-4">
                   <img 
                     src={cert.image} 
                     alt={cert.certificateName} 
-                    className="object-contain w-full h-full"
+                    className="object-contain w-full"
                     onError={(e) => {
                       e.currentTarget.src = 'https://via.placeholder.com/300x200?text=Certificate';
                     }}

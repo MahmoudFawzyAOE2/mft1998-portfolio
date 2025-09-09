@@ -124,7 +124,8 @@ const Header: React.FC = () => {
       
       {/* Work Status Ribbon */}
       <div className="relative">
-        <div className="group absolute left-0 top-0 z-10">
+        <a href="#/contact" className="group absolute left-0 top-0 z-10">
+        <div  className="group absolute left-0 top-0 z-10">
           <div className="flex items-center transition-transform duration-300 ease-out transform -translate-x-[calc(100%-24px)] group-hover:translate-x-0">
             <div className="bg-green-500 text-white px-4 py-2 text-sm font-medium whitespace-nowrap">
               <span>🟢 Open for work - Full time</span>
@@ -133,6 +134,7 @@ const Header: React.FC = () => {
             <div className="w-0 h-0 border-l-[12px] border-l-green-500 border-t-[20px] border-t-transparent border-b-[20px] border-b-transparent"></div>
           </div>
         </div>
+        </a>
       </div>
     </header>
   );

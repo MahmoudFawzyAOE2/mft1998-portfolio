@@ -83,6 +83,9 @@ const Projects: React.FC = () => {
     'https://raw.githubusercontent.com/MahmoudFawzyAOE2/mft1998-portfolio/refs/heads/main/images/TestNG.png',
     'https://avatars.githubusercontent.com/u/5879127?s=280&v=4',
     'https://user-images.githubusercontent.com/25181517/183914128-3fc88b4a-4ac1-40e6-9443-9a30182379b7.png',
+    'https://avatars.githubusercontent.com/u/44036562?s=280&v=4',
+    'https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/github.png',
+    'https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/git.png',
     'https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/intellij.png',
     'https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/jira.png',
   ];

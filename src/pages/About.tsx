@@ -35,13 +35,13 @@ const About: React.FC = () => {
       certificateName: 'ISTQB CTFL v4',
       date: 'January 2024',
       credentialId: '240117071',
-      image: 'https://raw.githubusercontent.com/MahmoudFawzyAOE2/mft1998-portfolio/refs/heads/main/images/ISTQBCTFL.png',
+      image: 'images/ISTQBCTFL.png',
     },
     {
       certificateName: 'ISTQB MAT',
       date: 'August 2025',
       credentialId: '250806034',
-      image: 'https://raw.githubusercontent.com/MahmoudFawzyAOE2/mft1998-portfolio/refs/heads/main/images/ISTQBMAT.png',
+      image: 'images/ISTQBMAT.png',
     }
 
   ];
