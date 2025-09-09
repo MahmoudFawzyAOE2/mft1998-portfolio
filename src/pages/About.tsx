@@ -1,5 +1,6 @@
 import React from 'react';
 import ExperienceSection from '@/components/about/ExperienceSection';
+import CertificationsSection from '@/components/about/CertificationsSection';
 
 const About: React.FC = () => {
   const experiences = [
@@ -35,6 +36,15 @@ const About: React.FC = () => {
       image: 'https://raw.githubusercontent.com/MahmoudFawzyAOE2/mft1998-portfolio/refs/heads/main/images/FOE.webp',
     },
     ];
+
+  const certifications = [
+    {
+      certificateName: 'ISTQB MAT',
+      date: 'June 2022',
+      credentialId: '234234234235345',
+      image: 'https://raw.githubusercontent.com/MahmoudFawzyAOE2/mft1998-portfolio/refs/heads/main/images/istqb.webp',
+    },
+  ];
   
   return (
     <div className="py-18">
@@ -45,7 +55,17 @@ const About: React.FC = () => {
         </p>
       </div>
       
-      <ExperienceSection experiences={experiences} />
+      {/* Desktop: Side by side, Mobile: Stacked */}
+      <div className="section-container">
+        <div className="grid grid-cols-1 xl:grid-cols-2 gap-12 xl:gap-16">
+          <div className="order-1">
+            <ExperienceSection experiences={experiences} />
+          </div>
+          <div className="order-2">
+            <CertificationsSection certifications={certifications} />
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

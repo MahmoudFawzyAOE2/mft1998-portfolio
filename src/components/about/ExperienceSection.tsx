@@ -52,8 +52,8 @@ const ExperienceSection: React.FC<ExperienceSectionProps> = ({ experiences }) =>
   };
 
   return (
-    <section className="section-container">
-      <h2 className="text-3xl font-bold mb-12 text-center">My Professional Journey</h2>
+    <section className="h-full">
+      <h2 className="text-3xl font-bold mb-8 text-center">My Professional Journey</h2>
       
       <div className="space-y-16">
         {experiences.map((exp, index) => (
@@ -99,8 +99,8 @@ const ExperienceSection: React.FC<ExperienceSectionProps> = ({ experiences }) =>
         ))}
       </div>
       
-      <div className="mt-16 text-center">
-        <Button asChild className="flex items-center gap-2">
+      <div className="mt-12 text-center xl:text-left">
+        <Button asChild className="flex items-center gap-2 w-fit">
           <a href="https://raw.githubusercontent.com/MahmoudFawzyAOE2/mft1998-portfolio/refs/heads/main/docs/Mahmoud%20Fawzy-CV-SoftwareTester%20.pdf" download>
             <Download className="h-4 w-4" /> Download Resume
           </a>
