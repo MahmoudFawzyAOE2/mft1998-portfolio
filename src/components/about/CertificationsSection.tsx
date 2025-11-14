@@ -37,7 +37,7 @@ const CertificationsSection: React.FC<CertificationsSectionProps> = ({ certifica
                 
                 <div className="space-y-4">
                   <div>
-                    <h3 className="text-xl font-semibold text-primary mb-2 flex items-center gap-2">
+                    <h3 className="text-2xl font-semibold text-primary mb-2 flex items-center gap-2">
                       <Award className="h-5 w-5" />
                       {cert.certificateName}
                     </h3>
@@ -46,12 +46,12 @@ const CertificationsSection: React.FC<CertificationsSectionProps> = ({ certifica
                   <div className="space-y-2">
                     <div className="flex items-center gap-2 text-muted-foreground">
                       <Calendar className="h-4 w-4" />
-                      <span className="text-sm font-medium">Issued: {cert.date}</span>
+                      <span className="text-md font-medium">Issued: {cert.date}</span>
                     </div>
                     
                     <div className="flex items-center gap-2 text-muted-foreground">
                       <CreditCard className="h-4 w-4" />
-                      <span className="text-sm font-medium">ID: {cert.credentialId}</span>
+                      <span className="text-md font-medium">ID: {cert.credentialId}</span>
                     </div>
                   </div>
                   

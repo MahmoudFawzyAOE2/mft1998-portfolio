@@ -20,7 +20,7 @@ const Projects: React.FC = () => {
       description: [
         "Enhanced Test Automation Framework for My Portfolio.",
         "Improved Utility classes and Page Object Model structure.",
-        "Integrated CI/CD with GitHub Actions for Testing and Reporting.",
+        "Integrated CI/CD using GitHub Actions for Testing and Reporting.",
       ],
       image: "https://raw.githubusercontent.com/MahmoudFawzyAOE2/mft1998-portfolio/refs/heads/main/images/MFTICONBLU_BugR.png",
       githubUrl: "https://github.com/MahmoudFawzyAOE2/mft1998-portfolio-TestAutomation",

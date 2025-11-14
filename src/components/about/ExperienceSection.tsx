@@ -7,7 +7,7 @@ import { Badge } from '@/components/ui/badge';
 type Experience = {
   company: string;
   position: string;
-  details: string;
+  details: string[];
   image: string;
   date?: string;
   location?: string;
@@ -61,7 +61,7 @@ const ExperienceSection: React.FC<ExperienceSectionProps> = ({ experiences }) =>
             key={index} 
             className="w-full"
           >
-            <div className="card-hover bg-sky-50 rounded-lg overflow-hidden shadow-md aspect-[2/1] flex items-center justify-center p-4 mb-4">
+            <div className="card-hover bg-sky-50 rounded-lg overflow-hidden shadow-md aspect-[2/1] flex items-center justify-center p-4 mb-2">
               <img 
                 src={exp.image} 
                 alt={exp.company} 
@@ -72,35 +72,31 @@ const ExperienceSection: React.FC<ExperienceSectionProps> = ({ experiences }) =>
             <div className="w-full">
               <div className="flex flex-col md:flex-row md:justify-between md:items-start ">
                 <div className="w-full md:w-auto mb-2 md:mb-0">
-                  <h3 className="text-2xl font-semibold">{exp.position}</h3>
-                  <h4 className="text-xl text-primary">{exp.company}</h4>
+                  <h3 className="text-2xl font-semibold max-w-[300px] mb-1">{exp.position}</h3>
+                  <h4 className="text-2xl text-primary font-semibold mb-1">{exp.company}</h4>
                 </div>
-                <div className="w-full md:w-auto md:text-right">
+                <div className="w-full md:w-auto md:text-right mt-1">
                   {exp.date && (
                     <p className="text-muted-foreground italic font-medium text-sm md:text-base bg-secondary/50 px-3 py-1 rounded-full inline-block mb-1">
                       {formatDateWithDuration(exp.date)}
                     </p>
                   )}
                   {exp.location && (
-                    <div className="flex items-center gap-1 text-sm md:justify-end">
+                    <div className="flex items-center gap-1 text-sm md:justify-end mt-1 mr-3">
                       <MapPin className="h-4 w-4 text-primary" />
                       <p className="text-muted-foreground font-medium">{exp.location}</p>
                     </div>
                   )}
                 </div>
               </div>
-              <p className="text-muted-foreground">{exp.details}</p>
+              <ul className="list-disc pl-5 space-y-1 text-muted-foreground">
+                {exp.details.map((point, index) => (
+                <li key={index}>{point}</li>
+                ))}
+              </ul>
             </div>
           </div>
         ))}
-      </div>
-      
-      <div className="mt-12 text-center xl:text-left">
-        <Button asChild className="flex items-center gap-2 w-fit">
-          <a href="https://raw.githubusercontent.com/MahmoudFawzyAOE2/mft1998-portfolio/refs/heads/main/docs/Mahmoud%20Fawzy-CV-SoftwareTester%20.pdf" download>
-            <Download className="h-4 w-4" /> Download Resume
-          </a>
-        </Button>
       </div>
     </section>
   );
