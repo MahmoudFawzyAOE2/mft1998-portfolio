@@ -26,8 +26,8 @@ const ProjectCard: React.FC<ProjectProps> = ({ title, type, description, image, 
       </div>
       <CardHeader>
       <CardTitle>{title}</CardTitle>
-      <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-1">
-        <div className="md:w-auto">
+      <div className="flex justify-between items-start gap-1">
+        <div>
           {type.includes("real")? (
         <Badge variant="default" className="inline-flex items-center gap-1 text-sm">
           <Rocket className="h-4 w-4"  />
@@ -45,7 +45,7 @@ const ProjectCard: React.FC<ProjectProps> = ({ title, type, description, image, 
         </Badge> 
           )}   
           </div>     
-        <div className="md:w-auto md:text-right">
+        <div className="text-right">
           <Badge variant="default" className="inline-flex items-center gap-1 text-muted-foreground italic text-sm bg-secondary/50 ">
           <Calendar className="h-4 w-4" />
             {date}
