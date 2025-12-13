@@ -65,17 +65,17 @@ const ExperienceSection: React.FC<ExperienceSectionProps> = ({ experiences }) =>
               <img 
                 src={exp.image} 
                 alt={exp.company} 
-                className="object-contain p-4 w-full h-full"
+                className="object-contain p-8 w-full h-full"
               />
             </div>
                         
             <div className="w-full">
-              <div className="flex flex-col md:flex-row md:justify-between md:items-start ">
-                <div className="w-full md:w-auto mb-2 md:mb-0">
+              <div className="flex flex-col md:flex-row md:justify-between md:items-start">
+                <div className="md:w-auto mb-2 md:mb-0">
                   <h3 className="text-2xl font-semibold max-w-[300px] mb-1">{exp.position}</h3>
                   <h4 className="text-2xl text-primary font-semibold mb-1">{exp.company}</h4>
                 </div>
-                <div className="w-full md:w-auto md:text-right mt-1">
+                <div className="md:w-auto md:text-right mt-1">
                   {exp.date && (
                     <p className="text-muted-foreground italic font-medium text-sm md:text-base bg-secondary/50 px-3 py-1 rounded-full inline-block mb-1">
                       {formatDateWithDuration(exp.date)}
