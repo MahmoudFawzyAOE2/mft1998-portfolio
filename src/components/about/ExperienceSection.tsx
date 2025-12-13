@@ -70,19 +70,19 @@ const ExperienceSection: React.FC<ExperienceSectionProps> = ({ experiences }) =>
             </div>
                         
             <div className="w-full">
-              <div className="flex flex-col md:flex-row md:justify-between md:items-start">
-                <div className="md:w-auto mb-2 md:mb-0">
+              <div className="flex justify-between items-start">
+                <div className="mb-2 md:mb-0">
                   <h3 className="text-2xl font-semibold max-w-[300px] mb-1">{exp.position}</h3>
                   <h4 className="text-2xl text-primary font-semibold mb-1">{exp.company}</h4>
                 </div>
-                <div className="md:w-auto md:text-right mt-1">
+                <div className="text-right mt-1">
                   {exp.date && (
                     <p className="text-muted-foreground italic font-medium text-sm md:text-base bg-secondary/50 px-3 py-1 rounded-full inline-block mb-1">
                       {formatDateWithDuration(exp.date)}
                     </p>
                   )}
                   {exp.location && (
-                    <div className="flex items-center gap-1 text-sm md:justify-end mt-1 mr-3">
+                    <div className="flex items-center gap-1 text-sm justify-end mt-1 mr-3">
                       <MapPin className="h-4 w-4 text-primary" />
                       <p className="text-muted-foreground font-medium">{exp.location}</p>
                     </div>
