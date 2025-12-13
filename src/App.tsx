@@ -9,6 +9,7 @@ import Index from "./pages/Index";
 import About from "./pages/About";
 import Projects from "./pages/Projects";
 import Services from "./pages/Services";
+import Documents from "./pages/Documents";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 
@@ -42,6 +43,14 @@ const App = () => (
             element={
               <Layout>
                 <Services />
+              </Layout>
+            }
+          />
+          <Route
+            path="/documents"
+            element={
+              <Layout>
+                <Documents />
               </Layout>
             }
           />
