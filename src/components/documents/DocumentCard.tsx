@@ -7,23 +7,25 @@ import { Badge } from '@/components/ui/badge';
 export interface DocumentProps {
   title: string;
   description: string;
-  category: string;
+  categories: string[];
+  fileType: 'pdf' | 'xls';
   driveUrl: string;
   date?: string;
 }
 
-const DocumentCard: React.FC<DocumentProps> = ({ title, description, category, driveUrl, date }) => {
+const DocumentCard: React.FC<DocumentProps> = ({ title, description, categories, fileType, driveUrl, date }) => {
+  const FileIcon = fileType === 'pdf' ? FileText : FileSpreadsheet;
+  
   return (
     <Card className="group hover:shadow-lg transition-all duration-300 border-2 hover:border-primary/50">
       <CardHeader className="pb-3">
         <div className="flex justify-between items-start gap-2">
           <div className="flex items-center gap-3">
             <div className="p-3 bg-primary/10 rounded-lg group-hover:bg-primary/20 transition-colors">
-              <FileSpreadsheet className="h-6 w-6 text-primary" />
+              <FileIcon className="h-6 w-6 text-primary" />
             </div>
             <div>
               <CardTitle className="text-lg">{title}</CardTitle>
-              <Badge variant="secondary" className="mt-1">{category}</Badge>
             </div>
           </div>
           {date && (
@@ -37,6 +39,11 @@ const DocumentCard: React.FC<DocumentProps> = ({ title, description, category, d
         <CardDescription className="text-sm leading-relaxed">
           {description}
         </CardDescription>
+        <div className="flex flex-wrap gap-2">
+          {categories.map((cat, index) => (
+            <Badge key={index} variant="secondary">{cat}</Badge>
+          ))}
+        </div>
         <Button 
           asChild 
           className="w-full gap-2"
