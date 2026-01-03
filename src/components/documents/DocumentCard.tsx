@@ -1,7 +1,7 @@
 import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { FileText, FileSpreadsheet, FileType, Presentation, ExternalLink } from 'lucide-react';
+import { FileText, FileSpreadsheet, FileAxis3D, FileType, Presentation, ExternalLink } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 
 export interface DocumentProps {
@@ -14,9 +14,9 @@ export interface DocumentProps {
 }
 
 const fileTypeConfig = {
-  pdf: { icon: FileType, color: 'text-red-500' },
+  pdf: { icon: FileAxis3D , color: 'text-red-500' },
   xls: { icon: FileSpreadsheet, color: 'text-green-500' },
-  doc: { icon: FileText, color: 'text-blue-500' },
+  doc: { icon: FileType, color: 'text-blue-500' },
   ppt: { icon: Presentation, color: 'text-orange-500' },
 };
 

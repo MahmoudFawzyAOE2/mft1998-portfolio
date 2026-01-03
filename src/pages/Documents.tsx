@@ -34,8 +34,7 @@ const Documents: React.FC = () => {
       <div className="section-container">
         <h1 className="text-4xl font-bold mb-4 text-center">Documents & Resources</h1>
         <p className="text-xl text-muted-foreground mb-12 max-w-3xl mx-auto text-center">
-          A collection of knowledge summaries, templates, and documentation resources 
-          that I've created or compiled throughout my career in software testing.
+          A collection of documents and resources related to software testing that I've created throughout my career.
         </p>
       
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
