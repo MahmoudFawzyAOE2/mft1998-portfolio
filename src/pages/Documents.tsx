@@ -3,36 +3,28 @@ import DocumentCard, { DocumentProps } from '@/components/documents/DocumentCard
 
 const documents: DocumentProps[] = [
   {
-    title: "Test Strategy Template",
-    description: "A comprehensive test strategy document template covering test objectives, scope, approach, and deliverables for software testing projects.",
-    categories: ["Testing", "Documentation"],
+    title: "ETL Testing Summary",
+    description: "An overview of ETL testing concepts, methodologies, and best practices for ensuring data integrity and quality in ETL processes.",
+    categories: ["ETL Testing", "Summary"],
     fileType: "pdf",
-    driveUrl: "https://drive.google.com/file/d/example1",
-    date: "2024"
+    driveUrl: "https://drive.google.com/file/d/1YbqwIf8YDIhxxoRlOwdnQldac0Pp0Nax/view?usp=drive_link",
+    date: "2025"
   },
   {
-    title: "API Testing Best Practices",
-    description: "Summary of API testing best practices including REST API validation, authentication testing, and performance considerations.",
-    categories: ["API Testing", "Best Practices"],
+    title: "Practical Testing Summary",
+    description: "A concise summary of practical testing lifecycle and work products for effective software quality assurance.",
+    categories: ["Manual Testing", "Summary"],
     fileType: "pdf",
-    driveUrl: "https://drive.google.com/file/d/example2",
-    date: "2024"
-  },
-  {
-    title: "Automation Framework Guide",
-    description: "Documentation on setting up and maintaining a Selenium-based test automation framework with Page Object Model design pattern.",
-    categories: ["Automation", "Selenium"],
-    fileType: "pdf",
-    driveUrl: "https://drive.google.com/file/d/example3",
+    driveUrl: "https://drive.google.com/file/d/19-1vjeTGqVPBBuY6eqyFYod3KMAz7hoV/view?usp=sharing",
     date: "2024"
   },
   {
     title: "Generic Test Suite",
-    description: "A generic test suite document for manual testing with requirment analysis, test cases, and execution status tracking.",
-    categories: ["Documentation", "Manual Testing"],
+    description: "A generic test suite document for manual testing with requirement analysis, test cases, and execution status tracking.",
+    categories: ["Manual Testing", "Test Suite"],
     fileType: "xls",
     driveUrl: "https://docs.google.com/spreadsheets/d/1WzhteKcaNp_uX_gMdw1jkHsAuATrq2nihK5xg1rGO3s/edit?usp=drive_link",
-    date: "2024"
+    date: "2025"
   },
 ];
 
