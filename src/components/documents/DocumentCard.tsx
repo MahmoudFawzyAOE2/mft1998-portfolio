@@ -1,7 +1,7 @@
 import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { FileText, ExternalLink } from 'lucide-react';
+import { FileText, FileSpreadsheet, ExternalLink } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 
 export interface DocumentProps {
@@ -19,7 +19,7 @@ const DocumentCard: React.FC<DocumentProps> = ({ title, description, category, d
         <div className="flex justify-between items-start gap-2">
           <div className="flex items-center gap-3">
             <div className="p-3 bg-primary/10 rounded-lg group-hover:bg-primary/20 transition-colors">
-              <FileText className="h-6 w-6 text-primary" />
+              <FileSpreadsheet className="h-6 w-6 text-primary" />
             </div>
             <div>
               <CardTitle className="text-lg">{title}</CardTitle>

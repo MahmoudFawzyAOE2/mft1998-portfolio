@@ -24,11 +24,11 @@ const documents: DocumentProps[] = [
     date: "2024"
   },
   {
-    title: "Bug Report Writing Guide",
-    description: "Guidelines for writing effective bug reports with proper severity classification, reproduction steps, and expected vs actual results.",
+    title: "Generic Test Suite",
+    description: "A generic test suite document for manual testing with requirment analysis, test cases, and execution status tracking.",
     category: "Documentation",
-    driveUrl: "https://drive.google.com/file/d/example4",
-    date: "2023"
+    driveUrl: "https://docs.google.com/spreadsheets/d/1WzhteKcaNp_uX_gMdw1jkHsAuATrq2nihK5xg1rGO3s/edit?usp=drive_link",
+    date: "2024"
   },
 ];
 
@@ -43,8 +43,8 @@ const Documents: React.FC = () => {
             that I've created or compiled throughout my career in software testing.
           </p>
         </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {documents.map((doc, index) => (
             <DocumentCard key={index} {...doc} />
           ))}
