@@ -1,20 +1,27 @@
 import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { FileText, FileSpreadsheet, ExternalLink } from 'lucide-react';
+import { FileText, FileSpreadsheet, FileType, Presentation, ExternalLink } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 
 export interface DocumentProps {
   title: string;
   description: string;
   categories: string[];
-  fileType: 'pdf' | 'xls';
+  fileType: 'pdf' | 'xls' | 'doc' | 'ppt';
   driveUrl: string;
   date?: string;
 }
 
+const fileTypeConfig = {
+  pdf: { icon: FileType, color: 'text-red-500' },
+  xls: { icon: FileSpreadsheet, color: 'text-green-500' },
+  doc: { icon: FileText, color: 'text-blue-500' },
+  ppt: { icon: Presentation, color: 'text-orange-500' },
+};
+
 const DocumentCard: React.FC<DocumentProps> = ({ title, description, categories, fileType, driveUrl, date }) => {
-  const FileIcon = fileType === 'pdf' ? FileText : FileSpreadsheet;
+  const { icon: FileIcon, color } = fileTypeConfig[fileType];
   
   return (
     <Card className="group hover:shadow-lg transition-all duration-300 border-2 hover:border-primary/50">
@@ -22,7 +29,7 @@ const DocumentCard: React.FC<DocumentProps> = ({ title, description, categories,
         <div className="flex justify-between items-start gap-2">
           <div className="flex items-center gap-3">
             <div className="p-3 bg-primary/10 rounded-lg group-hover:bg-primary/20 transition-colors">
-              <FileIcon className="h-6 w-6 text-primary" />
+              <FileIcon className={`h-6 w-6 ${color}`} />
             </div>
             <div>
               <CardTitle className="text-lg">{title}</CardTitle>
