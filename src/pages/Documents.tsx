@@ -7,25 +7,33 @@ const documents: DocumentProps[] = [
     description: "An overview of ETL testing concepts, methodologies, and best practices for ensuring data integrity and quality in ETL processes.",
     categories: ["ETL Testing", "Summary"],
     fileType: "pdf",
-    driveUrl: "https://drive.google.com/file/d/1YbqwIf8YDIhxxoRlOwdnQldac0Pp0Nax/view?usp=drive_link",
-    date: "2025"
+    driveUrl: "https://drive.google.com/file/d/18GDIpSnSjy8iDaYLsirsKwIzDXVJzHgL/view?usp=drive_link",
+    date: "2026"
   },
   {
     title: "Practical Testing Summary",
     description: "A concise summary of practical testing lifecycle and work products for effective software quality assurance.",
     categories: ["Manual Testing", "Summary"],
     fileType: "pdf",
-    driveUrl: "https://drive.google.com/file/d/19-1vjeTGqVPBBuY6eqyFYod3KMAz7hoV/view?usp=sharing",
+    driveUrl: "https://drive.google.com/file/d/19-1vjeTGqVPBBuY6eqyFYod3KMAz7hoV/view?usp=drive_link",
     date: "2024"
   },
   {
     title: "Generic Test Suite",
     description: "A generic test suite document for manual testing with requirement analysis, test cases, and execution status tracking.",
-    categories: ["Manual Testing", "Test Suite"],
+    categories: ["Manual Testing", "Artifact"],
     fileType: "xls",
-    driveUrl: "https://docs.google.com/spreadsheets/d/1WzhteKcaNp_uX_gMdw1jkHsAuATrq2nihK5xg1rGO3s/edit?usp=drive_link",
+    driveUrl: "https://docs.google.com/spreadsheets/d/1WzhteKcaNp_uX_gMdw1jkHsAuATrq2nihK5xg1rGO3s/edit?gid=2013700769#gid=2013700769",
     date: "2025"
   },
+    {
+    title: "Generic Bug Report",
+    description: "A generic bug report document for logging defects with steps, expected and actual results, severity, and status tracking.",
+    categories: ["Manual Testing", "Artifact"],
+    fileType: "xls",
+    driveUrl: "https://docs.google.com/spreadsheets/d/15YXokfAZNER6CBOiUyoQDQPWTgh6AZ3dOoXGmYM_QEs/edit?usp=drive_link",
+    date: "2026"
+  }
 ];
 
 const Documents: React.FC = () => {
