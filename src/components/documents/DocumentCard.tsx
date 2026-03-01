@@ -27,8 +27,8 @@ const DocumentCard: React.FC<DocumentProps> = ({ title, description, categories,
     <Card className="group hover:shadow-lg transition-all duration-300 border-2 hover:border-primary/50">
       <CardHeader className="pb-3">
         <div className="flex justify-between items-start gap-2">
-          <div className="flex items-center gap-3">
-            <div className="p-3 bg-primary/10 rounded-lg group-hover:bg-primary/20 transition-colors">
+          <div className="flex items-center gap-2">
+            <div className="p-2.5 bg-primary/10 rounded-lg group-hover:bg-primary/20 transition-colors">
               <FileIcon className={`h-6 w-6 ${color}`} />
             </div>
             <div>
@@ -43,7 +43,7 @@ const DocumentCard: React.FC<DocumentProps> = ({ title, description, categories,
         </div>
       </CardHeader>
       <CardContent className="space-y-4">
-        <CardDescription className="text-sm leading-relaxed">
+        <CardDescription className="text-md leading-relaxed">
           {description}
         </CardDescription>
         <div className="flex flex-wrap gap-2">
