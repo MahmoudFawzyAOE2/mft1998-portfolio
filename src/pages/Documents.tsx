@@ -33,6 +33,30 @@ const documents: DocumentProps[] = [
     fileType: "xls",
     driveUrl: "https://docs.google.com/spreadsheets/d/15YXokfAZNER6CBOiUyoQDQPWTgh6AZ3dOoXGmYM_QEs/edit?usp=drive_link",
     date: "2026"
+  },
+    {
+    title: "ISTQB MAT Summary",
+    description: "A summary document covering key concepts, techniques, and exam-focused notes for the ISTQB® Mobile Application Testing certification.",
+    categories: ["Mobile Testing", "Summary"],
+    fileType: "pdf",
+    driveUrl: "https://drive.google.com/file/d/1vTHXn1Zg6dw8E8-YQTV_TyxN2mB5spMJ/view?usp=drive_link",
+    date: "2025"
+  },
+    {
+    title: "Agile Course Summary",
+    description: "A concise summary document outlining core Agile principles, roles, ceremonies, and practical implementation concepts.",
+    categories: ["Test Process", "Summary"],
+    fileType: "pdf",
+    driveUrl: "https://drive.google.com/file/d/1JWWvJqQt72Npo53xXDOK5BBM3Rt9eqgU/view?usp=drive_link",
+    date: "2024"
+  },
+    {
+    title: "ISTQB FL V4 Summary",
+    description: "A concise summary document covering key concepts, principles, and terminology from the ISTQB Foundation Level (CTFL v4) syllabus.",
+    categories: ["Manual Testing", "Summary"],
+    fileType: "pdf",
+    driveUrl: "https://drive.google.com/file/d/19EFn9jFOiGAtWNZAW5zGfuq3ISG2uxpN/view?usp=drive_link",
+    date: "2024"
   }
 ];
 
