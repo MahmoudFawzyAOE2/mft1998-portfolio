@@ -63,6 +63,14 @@ const App = () => (
               </Layout>
             }
           />
+          <Route
+            path="/cv"
+            element={
+              <Layout>
+                <CV />
+              </Layout>
+            }
+          />
           {/* Catch-all route for 404 */}
           <Route path="*" element={<NotFound />} />
         </Routes>
