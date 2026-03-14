@@ -23,7 +23,7 @@ const CV: React.FC = () => {
         <div className="w-full max-w-4xl mx-auto rounded-lg overflow-hidden border border-border shadow-lg bg-card">
           <iframe
             src={`https://docs.google.com/viewer?url=${encodeURIComponent(CV_URL)}&embedded=true`}
-            className="w-full h-[80vh]"
+            className="w-full h-[130vh]"
             title="Resume PDF Viewer"
             frameBorder="0"
           />
