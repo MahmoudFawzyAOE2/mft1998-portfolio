@@ -12,6 +12,7 @@ import Services from "./pages/Services";
 import Documents from "./pages/Documents";
 import Contact from "./pages/Contact";
 import CV from "./pages/CV";
+import XmlSchema from "./pages/XmlSchema";
 import NotFound from "./pages/NotFound";
 
 const App = () => (

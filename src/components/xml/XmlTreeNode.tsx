@@ -20,13 +20,6 @@ const mandatoryConfig = {
   3: { label: 'Conditional', borderClass: 'border-2 border-amber-500 dark:border-amber-400', badgeClass: 'bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200' },
 } as const;
 
-// CSS for wavy border (conditional)
-const wavyBorderStyle: React.CSSProperties = {
-  backgroundImage: 'repeating-linear-gradient(135deg, transparent, transparent 3px, hsl(var(--accent)) 3px, hsl(var(--accent)) 6px)',
-  backgroundSize: '8px 8px',
-  backgroundPosition: 'top left, top right, bottom left, bottom right',
-};
-
 const XmlTreeNode: React.FC<XmlTreeNodeProps> = ({ node, depth = 0 }) => {
   const [isExpanded, setIsExpanded] = useState(depth < 2);
   const hasChildren = node.children.length > 0;
@@ -35,11 +28,6 @@ const XmlTreeNode: React.FC<XmlTreeNodeProps> = ({ node, depth = 0 }) => {
   const borderClass = node.mandatory_type === 3
     ? 'border-2 border-purple-500 dark:border-purple-400'
     : config.borderClass;
-
-  // Conditional gets a special wavy-style dashed border
-  const conditionalStyle = node.mandatory_type === 3
-    ? 'border-dashed' // Use dashed + wavy color to distinguish
-    : '';
 
   return (
     <div className="ml-2 md:ml-6">
