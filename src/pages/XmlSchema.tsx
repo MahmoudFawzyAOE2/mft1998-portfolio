@@ -1,21 +1,21 @@
-import React, { useMemo, useState } from 'react';
-import { xmlSchemaData } from '@/data/xmlSchemaData';
+import React, { useMemo, useState, useEffect } from 'react';
+import { loadXmlSchemaFromExcel } from '@/data/xmlSchemaData';
 import type { XmlTag } from '@/data/xmlSchemaData';
 import XmlTreeNode from '@/components/xml/XmlTreeNode';
 import type { TreeNode } from '@/components/xml/XmlTreeNode';
 import { Button } from '@/components/ui/button';
-import { Expand, Shrink, FileCode2 } from 'lucide-react';
+import { Expand, Shrink, FileCode2, Loader2 } from 'lucide-react';
+
+const EXCEL_URL = `${import.meta.env.BASE_URL}docs/XML_Tags_Schema.xlsx`;
 
 function buildTree(data: XmlTag[]): TreeNode[] {
   const map = new Map<number, TreeNode>();
   const roots: TreeNode[] = [];
 
-  // Create nodes
   data.forEach((tag) => {
     map.set(tag.tag_id, { ...tag, children: [] });
   });
 
-  // Build hierarchy
   data.forEach((tag) => {
     const node = map.get(tag.tag_id)!;
     if (tag.parent_tag_id === 0 || !tag.parent_tag_id) {
@@ -32,15 +32,52 @@ function buildTree(data: XmlTag[]): TreeNode[] {
 }
 
 const XmlSchema: React.FC = () => {
-  const tree = useMemo(() => buildTree(xmlSchemaData), []);
-  const [expandAll, setExpandAll] = useState(false);
-  // Force remount to reset expand state
+  const [data, setData] = useState<XmlTag[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
   const [key, setKey] = useState(0);
+  const [expandAll, setExpandAll] = useState(false);
+
+  useEffect(() => {
+    loadXmlSchemaFromExcel(EXCEL_URL)
+      .then((tags) => {
+        setData(tags);
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.error('Failed to load XML schema:', err);
+        setError('Failed to load XML schema data.');
+        setLoading(false);
+      });
+  }, []);
+
+  const tree = useMemo(() => buildTree(data), [data]);
 
   const handleToggleAll = () => {
     setExpandAll(!expandAll);
     setKey((k) => k + 1);
   };
+
+  if (loading) {
+    return (
+      <div className="py-18">
+        <div className="section-container flex items-center justify-center min-h-[400px]">
+          <Loader2 className="h-8 w-8 animate-spin text-primary" />
+          <span className="ml-3 text-muted-foreground">Loading XML schema…</span>
+        </div>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="py-18">
+        <div className="section-container flex items-center justify-center min-h-[400px]">
+          <p className="text-destructive">{error}</p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="py-18">
@@ -88,9 +125,13 @@ const XmlSchema: React.FC = () => {
 
         {/* Tree */}
         <div key={key} className="bg-card rounded-xl border p-4 shadow-sm">
-          {tree.map((root) => (
-            <XmlTreeNode key={root.tag_id} node={root} depth={0} />
-          ))}
+          {tree.length > 0 ? (
+            tree.map((root) => (
+              <XmlTreeNode key={root.tag_id} node={root} depth={0} />
+            ))
+          ) : (
+            <p className="text-muted-foreground text-center py-8">No tags found in the schema.</p>
+          )}
         </div>
       </div>
     </div>
