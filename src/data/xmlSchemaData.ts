@@ -4,7 +4,7 @@ export interface XmlTag {
   parent_tag_id: number;
   is_attribute: boolean;
   multiple_allowed: boolean;
-  mandatory_type: 1 | 2 | 3; // 1=mandatory, 2=optional, 3=conditional
+  mandatory_type: 1 | 2 | 3;
   mandatory_condition: string;
   description: string;
   validation_rules: string;
@@ -13,229 +13,56 @@ export interface XmlTag {
   relation_with: string;
 }
 
-export const xmlSchemaData: XmlTag[] = [
-  {
-    tag_id: 1,
-    tag_name: "FATCA_OECD",
-    parent_tag_id: 0,
-    is_attribute: false,
-    multiple_allowed: false,
-    mandatory_type: 1,
-    mandatory_condition: "",
-    description: "Root element of the XML Report",
-    validation_rules: "",
-    groupID: "",
-    relation_type: "",
-    relation_with: "",
-  },
-  {
-    tag_id: 2,
-    tag_name: "MessageSpec",
-    parent_tag_id: 1,
-    is_attribute: false,
-    multiple_allowed: false,
-    mandatory_type: 1,
-    mandatory_condition: "",
-    description: "Contain info about the report",
-    validation_rules: "",
-    groupID: "",
-    relation_type: "",
-    relation_with: "",
-  },
-  {
-    tag_id: 3,
-    tag_name: "SendingCompanyIN",
-    parent_tag_id: 2,
-    is_attribute: false,
-    multiple_allowed: false,
-    mandatory_type: 1,
-    mandatory_condition: "",
-    description: "Identifies the sender's 19-character identifying number",
-    validation_rules: 'if FI >> GIIN Number',
-    groupID: "",
-    relation_type: "",
-    relation_with: "",
-  },
-  {
-    tag_id: 4,
-    tag_name: "TransmittingCountry",
-    parent_tag_id: 2,
-    is_attribute: false,
-    multiple_allowed: false,
-    mandatory_type: 1,
-    mandatory_condition: "",
-    description: "",
-    validation_rules: 'Alpha-2 Standard "EG"',
-    groupID: "",
-    relation_type: "",
-    relation_with: "",
-  },
-  {
-    tag_id: 5,
-    tag_name: "ReceivingCountry",
-    parent_tag_id: 2,
-    is_attribute: false,
-    multiple_allowed: false,
-    mandatory_type: 1,
-    mandatory_condition: "",
-    description: "",
-    validation_rules: 'Always "US"',
-    groupID: "",
-    relation_type: "",
-    relation_with: "",
-  },
-  {
-    tag_id: 6,
-    tag_name: "MessageType",
-    parent_tag_id: 2,
-    is_attribute: false,
-    multiple_allowed: false,
-    mandatory_type: 1,
-    mandatory_condition: "",
-    description: "",
-    validation_rules: 'Always "FATCA"',
-    groupID: "",
-    relation_type: "",
-    relation_with: "",
-  },
-  {
-    tag_id: 7,
-    tag_name: "MessageRefId",
-    parent_tag_id: 2,
-    is_attribute: false,
-    multiple_allowed: false,
-    mandatory_type: 1,
-    mandatory_condition: "",
-    description: "Unique ID for this message",
-    validation_rules: "Must be unique across all FATCA XML files received from this entity",
-    groupID: "",
-    relation_type: "",
-    relation_with: "",
-  },
-  {
-    tag_id: 8,
-    tag_name: "CorrMessageRefId",
-    parent_tag_id: 2,
-    is_attribute: false,
-    multiple_allowed: false,
-    mandatory_type: 3,
-    mandatory_condition: 'Mandatory if "FATCA2", "FATCA3" or "FATCA4"',
-    description: "Unique ID of the previously sent report",
-    validation_rules: "",
-    groupID: "",
-    relation_type: "",
-    relation_with: "",
-  },
-  {
-    tag_id: 9,
-    tag_name: "ReportingPeriod",
-    parent_tag_id: 2,
-    is_attribute: false,
-    multiple_allowed: false,
-    mandatory_type: 1,
-    mandatory_condition: "",
-    description: "Identifies the reporting year for the current message",
-    validation_rules: "YYYY-MM-DD format. Do not enter future years",
-    groupID: "",
-    relation_type: "",
-    relation_with: "",
-  },
-  {
-    tag_id: 10,
-    tag_name: "Timestamp",
-    parent_tag_id: 2,
-    is_attribute: false,
-    multiple_allowed: false,
-    mandatory_type: 1,
-    mandatory_condition: "",
-    description: "Identifies the date and time the message was created",
-    validation_rules: "YYYY-MM-DD'T'hh:mm:ss format",
-    groupID: "",
-    relation_type: "",
-    relation_with: "",
-  },
-  {
-    tag_id: 11,
-    tag_name: "FATCA",
-    parent_tag_id: 1,
-    is_attribute: false,
-    multiple_allowed: false,
-    mandatory_type: 1,
-    mandatory_condition: "",
-    description: "",
-    validation_rules: "",
-    groupID: "",
-    relation_type: "",
-    relation_with: "",
-  },
-  {
-    tag_id: 12,
-    tag_name: "ReportingFI",
-    parent_tag_id: 11,
-    is_attribute: false,
-    multiple_allowed: false,
-    mandatory_type: 1,
-    mandatory_condition: "",
-    description: "",
-    validation_rules: "",
-    groupID: "",
-    relation_type: "",
-    relation_with: "",
-  },
-  {
-    tag_id: 13,
-    tag_name: "ReportingGroup",
-    parent_tag_id: 11,
-    is_attribute: false,
-    multiple_allowed: false,
-    mandatory_type: 1,
-    mandatory_condition: "",
-    description: "",
-    validation_rules: "",
-    groupID: "",
-    relation_type: "",
-    relation_with: "",
-  },
-  {
-    tag_id: 14,
-    tag_name: "NilReport",
-    parent_tag_id: 13,
-    is_attribute: false,
-    multiple_allowed: false,
-    mandatory_type: 3,
-    mandatory_condition: "If no AccountReport or Pool Report, NilReport must exist",
-    description: "",
-    validation_rules: "",
-    groupID: "",
-    relation_type: "OR",
-    relation_with: "A",
-  },
-  {
-    tag_id: 15,
-    tag_name: "AccountReport",
-    parent_tag_id: 13,
-    is_attribute: false,
-    multiple_allowed: true,
-    mandatory_type: 3,
-    mandatory_condition: "If no NilReport, at least one AccountReport or PoolReport must exist",
-    description: "Contain reported Account's info",
-    validation_rules: "",
-    groupID: "A",
-    relation_type: "OR",
-    relation_with: "14",
-  },
-  {
-    tag_id: 16,
-    tag_name: "PoolReport",
-    parent_tag_id: 13,
-    is_attribute: false,
-    multiple_allowed: true,
-    mandatory_type: 3,
-    mandatory_condition: "If no NilReport, at least one AccountReport or PoolReport must exist",
-    description: "Contain info for the reported pool of account holders",
-    validation_rules: "",
-    groupID: "A",
-    relation_type: "OR",
-    relation_with: "14",
-  },
-];
+// Dynamically load SheetJS from CDN
+let xlsxLib: any = null;
+
+async function loadXlsx(): Promise<any> {
+  if (xlsxLib) return xlsxLib;
+  const script = document.createElement('script');
+  script.src = 'https://cdn.sheetjs.com/xlsx-0.20.3/package/dist/xlsx.full.min.js';
+  await new Promise<void>((resolve, reject) => {
+    script.onload = () => resolve();
+    script.onerror = () => reject(new Error('Failed to load SheetJS'));
+    document.head.appendChild(script);
+  });
+  xlsxLib = (window as any).XLSX;
+  return xlsxLib;
+}
+
+function parseBool(val: any): boolean {
+  if (typeof val === 'boolean') return val;
+  if (typeof val === 'string') return val.toLowerCase() === 'true' || val === '1';
+  if (typeof val === 'number') return val === 1;
+  return false;
+}
+
+function parseNum(val: any, fallback: number): number {
+  const n = Number(val);
+  return isNaN(n) ? fallback : n;
+}
+
+export async function loadXmlSchemaFromExcel(url: string): Promise<XmlTag[]> {
+  const XLSX = await loadXlsx();
+  const response = await fetch(url);
+  const arrayBuffer = await response.arrayBuffer();
+  const workbook = XLSX.read(arrayBuffer, { type: 'array' });
+  const sheet = workbook.Sheets[workbook.SheetNames[0]];
+  const rows: any[] = XLSX.utils.sheet_to_json(sheet, { defval: '' });
+
+  return rows
+    .filter((row: any) => row.tag_id && row.tag_name)
+    .map((row: any): XmlTag => ({
+      tag_id: parseNum(row.tag_id, 0),
+      tag_name: String(row.tag_name).trim(),
+      parent_tag_id: parseNum(row.parent_tag_id, 0),
+      is_attribute: parseBool(row.is_attribute),
+      multiple_allowed: parseBool(row.multiple_allowed) || parseNum(row.multiple_allowed, 0) === 1,
+      mandatory_type: (parseNum(row.mandatory_type, 2) as 1 | 2 | 3),
+      mandatory_condition: String(row.mandatory_condition || '').trim(),
+      description: String(row.description || '').trim(),
+      validation_rules: String(row.validation_rules || '').trim(),
+      groupID: String(row.groupID || '').trim(),
+      relation_type: String(row.relation_type || '').trim(),
+      relation_with: String(row.relation_with || '').trim(),
+    }));
+}
