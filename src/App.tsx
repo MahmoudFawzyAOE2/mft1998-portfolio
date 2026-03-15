@@ -72,6 +72,14 @@ const App = () => (
               </Layout>
             }
           />
+          <Route
+            path="/xml"
+            element={
+              <Layout>
+                <XmlSchema />
+              </Layout>
+            }
+          />
           {/* Catch-all route for 404 */}
           <Route path="*" element={<NotFound />} />
         </Routes>
