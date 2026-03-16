@@ -35,7 +35,6 @@ const XmlSchema: React.FC = () => {
   const [data, setData] = useState<XmlTag[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  const [key, setKey] = useState(0);
   const [expandAll, setExpandAll] = useState(false);
 
   useEffect(() => {
@@ -53,9 +52,52 @@ const XmlSchema: React.FC = () => {
 
   const tree = useMemo(() => buildTree(data), [data]);
 
+  const tagsById = useMemo(() => {
+    const map = new Map<number, XmlTag>();
+    data.forEach((tag) => map.set(tag.tag_id, tag));
+    return map;
+  }, [data]);
+
+  const groups = useMemo(() => {
+    const map = new Map<string, XmlTag[]>();
+
+    data.forEach((tag) => {
+      if (!tag.groupID) return;
+      const existing = map.get(tag.groupID) ?? [];
+      existing.push(tag);
+      map.set(tag.groupID, existing);
+    });
+
+    return map;
+  }, [data]);
+
+  const resolveRelationLabel = (node: TreeNode) => {
+    if (!node.relation_type || !node.relation_with || !node.parent_tag_id) return null;
+
+    const parent = tagsById.get(node.parent_tag_id);
+    const parentLabel = parent ? `<${parent.tag_name}>` : 'Parent';
+    const relation = node.relation_type.trim();
+    const targetId = Number(node.relation_with);
+
+    if (!Number.isNaN(targetId)) {
+      const target = tagsById.get(targetId);
+      if (!target) return `${parentLabel} ${relation} [missing tag ${node.relation_with}]`;
+      const targetLabel = target.is_attribute ? `@${target.tag_name}` : `<${target.tag_name}>`;
+      return `${parentLabel} ${relation} ${targetLabel}`;
+    }
+
+    const groupKey = node.relation_with.trim();
+    const groupMembers = groups.get(groupKey) ?? [];
+    const memberLabels = groupMembers.map((member) => member.is_attribute ? `@${member.tag_name}` : `<${member.tag_name}>`);
+    const groupLabel = memberLabels.length > 0
+      ? `Group ${groupKey}: ${memberLabels.join(' + ')}`
+      : `Group ${groupKey}`;
+
+    return `${parentLabel} ${relation} ${groupLabel}`;
+  };
+
   const handleToggleAll = () => {
-    setExpandAll(!expandAll);
-    setKey((k) => k + 1);
+    setExpandAll((prev) => !prev);
   };
 
   if (loading) {
@@ -82,7 +124,6 @@ const XmlSchema: React.FC = () => {
   return (
     <div className="py-18">
       <div className="section-container">
-        {/* Header */}
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
           <div className="flex items-center gap-3">
             <FileCode2 className="h-8 w-8 text-primary" />
@@ -99,7 +140,6 @@ const XmlSchema: React.FC = () => {
           </Button>
         </div>
 
-        {/* Legend */}
         <div className="flex flex-wrap gap-4 mb-6 p-4 rounded-lg bg-muted/50 border text-sm">
           <div className="flex items-center gap-2">
             <div className="w-6 h-4 rounded border-2 border-solid border-green-500" />
@@ -123,11 +163,16 @@ const XmlSchema: React.FC = () => {
           </div>
         </div>
 
-        {/* Tree */}
-        <div key={key} className="bg-card rounded-xl border p-4 shadow-sm">
+        <div className="w-full">
           {tree.length > 0 ? (
             tree.map((root) => (
-              <XmlTreeNode key={root.tag_id} node={root} depth={0} />
+              <XmlTreeNode
+                key={root.tag_id}
+                node={root}
+                depth={0}
+                expandedAll={expandAll}
+                resolveRelationLabel={resolveRelationLabel}
+              />
             ))
           ) : (
             <p className="text-muted-foreground text-center py-8">No tags found in the schema.</p>
