@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { ChevronRight, ChevronDown, Info, AlertCircle, Repeat } from 'lucide-react';
+import { ChevronRight, ChevronDown, Info, Repeat } from 'lucide-react';
 import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip';
 import { Badge } from '@/components/ui/badge';
 import { cn } from '@/lib/utils';
@@ -19,7 +19,7 @@ interface XmlTreeNodeProps {
 const mandatoryConfig = {
   1: { label: 'Mandatory', borderClass: 'border-2 border-solid border-green-500 dark:border-green-400', badgeClass: 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200' },
   2: { label: 'Optional', borderClass: 'border-2 border-dashed border-amber-500 dark:border-amber-400', badgeClass: 'bg-amber-100 text-amber-800 dark:bg-amber-900 dark:text-amber-200' },
-  3: { label: 'Conditional', borderClass: 'border-2 border-amber-500 dark:border-amber-400', badgeClass: 'bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200' },
+  3: { label: 'Conditional', borderClass: 'border-2 border-solid border-amber-500 dark:border-amber-400', badgeClass: 'bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200' },
 } as const;
 
 const XmlTreeNode: React.FC<XmlTreeNodeProps> = ({
@@ -77,6 +77,10 @@ const XmlTreeNode: React.FC<XmlTreeNodeProps> = ({
               {config.label}
             </Badge>
 
+            {node.description && (
+              <span className="text-xs text-muted-foreground mt-1">{node.description}</span>
+            )}
+
             {node.validation_rules && (
               <Tooltip>
                 <TooltipTrigger asChild>
@@ -95,8 +99,8 @@ const XmlTreeNode: React.FC<XmlTreeNodeProps> = ({
               <Tooltip>
                 <TooltipTrigger asChild>
                   <span className="inline-flex items-center gap-1">
-                    <Repeat className="h-3.5 w-3.5 text-primary animate-pulse" />
-                    <span className="text-[10px] text-muted-foreground font-medium">multiple</span>
+                    <span className="text-primary animate-pulse">↻</span>
+                    <span className="text-[10px] text-blue-600 dark:text-blue-400 font-medium">multiple</span>
                   </span>
                 </TooltipTrigger>
                 <TooltipContent>Multiple instances allowed</TooltipContent>
@@ -109,37 +113,27 @@ const XmlTreeNode: React.FC<XmlTreeNodeProps> = ({
               </Badge>
             )}
 
-            {node.groupID && (
-              <Badge variant="outline" className="text-[10px] px-1.5 py-0 bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200">
-                Group {node.groupID}
-              </Badge>
-            )}
 
             {relationLabel && (
               <Badge variant="outline" className="text-[10px] px-1.5 py-0 bg-rose-100 text-rose-800 dark:bg-rose-900 dark:text-rose-200 whitespace-normal text-left">
                 {relationLabel}
               </Badge>
             )}
-          </div>
 
-          {node.description && (
-            <p className="text-xs text-muted-foreground mt-1">{node.description}</p>
-          )}
-
-          <div className="flex flex-wrap gap-2 mt-1">
             {node.mandatory_condition && (
               <Tooltip>
                 <TooltipTrigger asChild>
-                  <span className="inline-flex items-center gap-1 text-[11px] text-purple-600 dark:text-purple-400 cursor-help">
-                    <AlertCircle className="h-3 w-3" />
-                    Condition
+                  <span className="ml-auto inline-flex items-center gap-1 text-[11px] text-purple-600 dark:text-purple-400 cursor-help">
+                    <Info className="h-3 w-3" />
+                    <span>Condition</span>
                   </span>
                 </TooltipTrigger>
-                <TooltipContent side="right" className="max-w-sm">
+                <TooltipContent side="right" className="max-w-sm gap-4">
                   <p className="text-sm text-left">{node.mandatory_condition}</p>
                 </TooltipContent>
               </Tooltip>
             )}
+
           </div>
         </div>
       </div>

@@ -71,30 +71,54 @@ const XmlSchema: React.FC = () => {
     return map;
   }, [data]);
 
-  const resolveRelationLabel = (node: TreeNode) => {
-    if (!node.relation_type || !node.relation_with || !node.parent_tag_id) return null;
+const resolveRelationLabel = (node: TreeNode) => {
+  if (!node.relation_type || !node.relation_with || node.parent_tag_id == null) return null;
 
-    const parent = tagsById.get(node.parent_tag_id);
-    const parentLabel = parent ? `<${parent.tag_name}>` : 'Parent';
-    const relation = node.relation_type.trim();
-    const targetId = Number(node.relation_with);
+  const relation = node.relation_type.trim();
 
-    if (!Number.isNaN(targetId)) {
-      const target = tagsById.get(targetId);
-      if (!target) return `${parentLabel} ${relation} [missing tag ${node.relation_with}]`;
-      const targetLabel = target.is_attribute ? `@${target.tag_name}` : `<${target.tag_name}>`;
-      return `${parentLabel} ${relation} ${targetLabel}`;
-    }
+  const formatTag = (tag: { tag_name: string; is_attribute?: boolean }) =>
+    tag.is_attribute ? `@${tag.tag_name}` : `<${tag.tag_name}>`;
 
-    const groupKey = node.relation_with.trim();
-    const groupMembers = groups.get(groupKey) ?? [];
-    const memberLabels = groupMembers.map((member) => member.is_attribute ? `@${member.tag_name}` : `<${member.tag_name}>`);
-    const groupLabel = memberLabels.length > 0
-      ? `Group ${groupKey}: ${memberLabels.join(' + ')}`
+  const formatGroup = (groupKey: string) => {
+    const members = groups.get(groupKey) ?? [];
+    const labels = members.map(formatTag);
+    return labels.length > 0
+      ? `${labels.join(' + ')}`
       : `Group ${groupKey}`;
-
-    return `${parentLabel} ${relation} ${groupLabel}`;
   };
+
+  // ----- SOURCE LABEL -----
+
+  let sourceLabel: string;
+
+  if (node.groupID) {
+    sourceLabel = formatGroup(node.groupID);
+  } else {
+    sourceLabel = formatTag(node);
+  }
+
+  // ----- TARGET LABEL -----
+
+  const targetId = Number(node.relation_with);
+
+  let targetLabel: string;
+
+  if (!Number.isNaN(targetId)) {
+    const target = tagsById.get(targetId);
+    if (!target) return `${sourceLabel} ${relation} [missing tag ${node.relation_with}]`;
+
+    if (target.groupID) {
+      targetLabel = formatGroup(target.groupID);
+    } else {
+      targetLabel = formatTag(target);
+    }
+  } else {
+    const groupKey = node.relation_with.trim();
+    targetLabel = formatGroup(groupKey);
+  }
+
+  return `${sourceLabel} ${relation} ${targetLabel}`;
+};
 
   const handleToggleAll = () => {
     setExpandAll((prev) => !prev);
