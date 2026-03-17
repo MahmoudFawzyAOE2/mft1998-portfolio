@@ -18,8 +18,8 @@ interface XmlTreeNodeProps {
 
 const mandatoryConfig = {
   1: { label: 'Mandatory', borderClass: 'border-2 border-solid border-green-500 dark:border-green-400', badgeClass: 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200' },
-  2: { label: 'Optional', borderClass: 'border-2 border-dashed border-amber-500 dark:border-amber-400', badgeClass: 'bg-amber-100 text-amber-800 dark:bg-amber-900 dark:text-amber-200' },
-  3: { label: 'Conditional', borderClass: 'border-2 border-solid border-amber-500 dark:border-amber-400', badgeClass: 'bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200' },
+  2: { label: 'Optional', borderClass: 'border-2 border-dotted  border-[3px] border-amber-500 dark:border-amber-400', badgeClass: 'bg-amber-100 text-amber-800 dark:bg-amber-900 dark:text-amber-200' },
+  3: { label: 'Conditional', borderClass: 'border-2 border-dashed border-[3px] border-purple-500 dark:border-purple-400', badgeClass: 'bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200' },
 } as const;
 
 const XmlTreeNode: React.FC<XmlTreeNodeProps> = ({
@@ -37,9 +37,7 @@ const XmlTreeNode: React.FC<XmlTreeNodeProps> = ({
     setIsExpanded(expandedAll);
   }, [expandedAll]);
 
-  const borderClass = node.mandatory_type === 3
-    ? 'border-2 border-purple-500 dark:border-purple-400'
-    : config.borderClass;
+  const borderClass = config.borderClass;
 
   return (
     <div className="ml-1 md:ml-4">
@@ -47,7 +45,6 @@ const XmlTreeNode: React.FC<XmlTreeNodeProps> = ({
         className={cn(
           'flex items-start gap-2 py-3 rounded-lg my-1 transition-all duration-200 hover:bg-muted/50 cursor-pointer group',
           borderClass,
-          node.mandatory_type === 3 && 'border-double border-[3px]',
           node.is_attribute && 'bg-muted/30 italic'
         )}
         onClick={() => hasChildren && setIsExpanded((prev) => !prev)}
@@ -106,13 +103,6 @@ const XmlTreeNode: React.FC<XmlTreeNodeProps> = ({
                 <TooltipContent>Multiple instances allowed</TooltipContent>
               </Tooltip>
             )}
-
-            {node.is_attribute && (
-              <Badge variant="secondary" className="text-[10px] px-1.5 py-0">
-                attribute
-              </Badge>
-            )}
-
 
             {relationLabel && (
               <Badge variant="outline" className="text-[10px] px-1.5 py-0 bg-rose-100 text-rose-800 dark:bg-rose-900 dark:text-rose-200 whitespace-normal text-left">
