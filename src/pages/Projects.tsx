@@ -1,6 +1,5 @@
 import React from 'react';
 import ProjectCard, { ProjectProps } from '@/components/projects/ProjectCard';
-import ToolsCarousel from '@/components/projects/ToolsCarousel';
 
 const Projects: React.FC = () => {
   // Static project data with updated images
@@ -16,6 +15,18 @@ const Projects: React.FC = () => {
       image: "https://raw.githubusercontent.com/MahmoudFawzyAOE2/mft1998-portfolio/refs/heads/main/images/DataGear.webp",
       date: "Oct 2025 - Presesnt",
       githubUrl: "https://www.datagearbi.com/dgcrp.html",
+    }, 
+    {
+      title: "DG-FATCA",
+      type: "real",
+      description: [
+        "Designed and analyzed test scenarios on multiple system modules.",
+        "Developed and ran test cases, reporting and tracking issues through Jira.", 
+        "Interpreted requirements and proposing product improvements."
+      ],
+      image: "https://raw.githubusercontent.com/MahmoudFawzyAOE2/mft1998-portfolio/refs/heads/main/images/DataGear.webp",
+      date: "Oct 2025 - Presesnt",
+      githubUrl: "https://datagearbi.com/dgfatca.html",
     }, 
         {
       title: "Tadarab V3",
@@ -91,28 +102,6 @@ const Projects: React.FC = () => {
     }
   ];
 
-  const tools = [
-    'https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg',
-    'https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/c.png',
-    'https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/c++.png',
-    'https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/java.png',
-    'https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/matlab.png',
-    'https://www.svgrepo.com/show/303229/microsoft-sql-server-logo.svg',
-    'https://user-images.githubusercontent.com/25181517/192158954-f88b5814-d510-4564-b285-dff7d6400dad.png', 
-    'https://user-images.githubusercontent.com/25181517/183898674-75a4a1b1-f960-4ea9-abcb-637170a00a75.png',
-    'https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/linux.png',
-    'https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/postman.png',
-    'https://avatars.githubusercontent.com/u/19369327?s=200&v=4',
-    'https://miro.medium.com/v2/resize:fit:1400/1*musVE9e4bgjTWeoRmc-P_w.png', 
-    'https://raw.githubusercontent.com/MahmoudFawzyAOE2/mft1998-portfolio/refs/heads/main/images/TestNG.png',
-    'https://avatars.githubusercontent.com/u/5879127?s=280&v=4',
-    'https://user-images.githubusercontent.com/25181517/183914128-3fc88b4a-4ac1-40e6-9443-9a30182379b7.png',
-    'https://avatars.githubusercontent.com/u/44036562?s=280&v=4',
-    'https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/github.png',
-    'https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/git.png',
-    'https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/intellij.png',
-    'https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/jira.png',
-  ];
 
   return (
     <div className="py-18">
@@ -127,10 +116,6 @@ const Projects: React.FC = () => {
             <ProjectCard key={index} {...project} />
           ))}
         </div>
-      </div>
-      
-      <div className="mt-16">
-        <ToolsCarousel tools={tools} />
       </div>
     </div>
   );

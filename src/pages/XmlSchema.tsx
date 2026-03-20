@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/button';
 import { Expand, Shrink, FileCode2, Loader2 } from 'lucide-react';
 
 const EXCEL_URL = `${import.meta.env.BASE_URL}docs/XML_Tags_Schema.xlsx`;
+const fileName = EXCEL_URL.split('/').pop();
 
 function buildTree(data: XmlTag[]): TreeNode[] {
   const map = new Map<number, TreeNode>();
@@ -154,7 +155,7 @@ const resolveRelationLabel = (node: TreeNode) => {
             <div>
               <h1 className="text-3xl font-bold">XML Schema Viewer</h1>
               <p className="text-muted-foreground text-sm mt-1">
-                FATCA OECD XML Report Structure
+                {fileName} 
               </p>
             </div>
           </div>

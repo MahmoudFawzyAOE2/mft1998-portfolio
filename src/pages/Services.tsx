@@ -13,7 +13,7 @@ const Services: React.FC = () => {
       image: 'https://raw.githubusercontent.com/MahmoudFawzyAOE2/mft1998-portfolio/refs/heads/main/images/manual.webp',
       tools: [
         'https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/jira.png', // Jira
-        'https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Google_Sheets_logo_%282014-2020%29.svg/1498px-Google_Sheets_logo_%282014-2020%29.svg.png', // Google Sheets
+        'https://img.utdstc.com/icon/5c6/b29/5c6b29f8bc2051f62849b1e218dfe5bc190a197aedbdf7649d390dd0754df28f:200' // Google Sheets
       ],
     },
     {
@@ -42,7 +42,7 @@ const Services: React.FC = () => {
       tools: [
         'https://www.svgrepo.com/show/354202/postman-icon.svg', // Postman
         'https://user-images.githubusercontent.com/25181517/183912952-83784e94-629d-4c34-a961-ae2ae795b662.png', // Jira
-        'https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Google_Sheets_logo_%282014-2020%29.svg/1498px-Google_Sheets_logo_%282014-2020%29.svg.png', // Google Sheets
+        'https://img.utdstc.com/icon/5c6/b29/5c6b29f8bc2051f62849b1e218dfe5bc190a197aedbdf7649d390dd0754df28f:200' // Google Sheets
       ],
     },
     {
@@ -70,8 +70,9 @@ const Services: React.FC = () => {
       image: 'https://raw.githubusercontent.com/MahmoudFawzyAOE2/mft1998-portfolio/refs/heads/main/images/documentation.webp',
       tools: [
         'https://user-images.githubusercontent.com/25181517/189715289-df3ee512-6eca-463f-a0f4-c10d94a06b2f.png', // Figma
-        'https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Google_Sheets_logo_%282014-2020%29.svg/1498px-Google_Sheets_logo_%282014-2020%29.svg.png', // Google Sheets
-        'https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Google_Docs_2020_Logo.svg/174px-Google_Docs_2020_Logo.svg.png', // Google Docs
+        'https://img.utdstc.com/icon/5c6/b29/5c6b29f8bc2051f62849b1e218dfe5bc190a197aedbdf7649d390dd0754df28f:200', // Google Sheets
+        'https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Google_Docs_2020_Logo.svg/960px-Google_Docs_2020_Logo.svg.png', // Google Docs
+        'https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/2023_Obsidian_logo.svg/1280px-2023_Obsidian_logo.svg.png' // Obsidian
       ],
     }
   ];

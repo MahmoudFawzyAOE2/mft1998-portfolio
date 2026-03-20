@@ -16,9 +16,7 @@ const ToolsCarousel: React.FC<ToolsCarouselProps> = ({ tools }) => {
   };
 
   return (
-    <section className="py-12 bg-secondary overflow-hidden">
-      <h3 className="text-center text-2xl font-bold mb-8">Technologies & Tools</h3>
-
+    <section className="py-10 bg-secondary overflow-hidden">
       <div className="flex whitespace-nowrap">
         {/* First marquee loop */}
         <div className="animate-marquee flex">
