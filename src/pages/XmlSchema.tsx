@@ -1,9 +1,11 @@
-import React, { useMemo, useState, useEffect } from 'react';
+import React, { useMemo, useState, useEffect, useCallback } from 'react';
 import { loadXmlSchemaFromExcel } from '@/data/xmlSchemaData';
 import type { XmlTag } from '@/data/xmlSchemaData';
 import XmlTreeNode from '@/components/xml/XmlTreeNode';
 import type { TreeNode } from '@/components/xml/XmlTreeNode';
 import { Button } from '@/components/ui/button';
+import { Switch } from '@/components/ui/switch';
+import { Label } from '@/components/ui/label';
 import { Expand, Shrink, FileCode2, Loader2 } from 'lucide-react';
 
 const EXCEL_URL = `${import.meta.env.BASE_URL}docs/XML_Tags_Schema.xlsx`;
@@ -37,6 +39,9 @@ const XmlSchema: React.FC = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [expandAll, setExpandAll] = useState(false);
+  const [hideOptional, setHideOptional] = useState(false);
+  const [hideConditional, setHideConditional] = useState(false);
+  const [hideNotNew, setHideNotNew] = useState(false);
 
   useEffect(() => {
     loadXmlSchemaFromExcel(EXCEL_URL)
@@ -51,7 +56,16 @@ const XmlSchema: React.FC = () => {
       });
   }, []);
 
-  const tree = useMemo(() => buildTree(data), [data]);
+  const filteredData = useMemo(() => {
+    return data.filter((tag) => {
+      if (hideOptional && tag.mandatory_type === 2) return false;
+      if (hideConditional && tag.mandatory_type === 3 && !tag.relation_type) return false;
+      if (hideNotNew && tag.is_notNew) return false;
+      return true;
+    });
+  }, [data, hideOptional, hideConditional, hideNotNew]);
+
+  const tree = useMemo(() => buildTree(filteredData), [filteredData]);
 
   const tagsById = useMemo(() => {
     const map = new Map<number, XmlTag>();
