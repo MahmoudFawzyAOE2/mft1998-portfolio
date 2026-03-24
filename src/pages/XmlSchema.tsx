@@ -1,4 +1,4 @@
-import React, { useMemo, useState, useEffect, useCallback } from 'react';
+import React, { useMemo, useState, useEffect } from 'react';
 import { loadXmlSchemaFromExcel } from '@/data/xmlSchemaData';
 import type { XmlTag } from '@/data/xmlSchemaData';
 import XmlTreeNode from '@/components/xml/XmlTreeNode';
@@ -202,7 +202,39 @@ const resolveRelationLabel = (node: TreeNode) => {
           </div>
         </div>
 
-        <div className="w-full">
+        <div className="flex flex-wrap gap-6 mb-6 p-4 rounded-lg bg-muted/30 border text-sm">
+          <div className="flex items-center gap-2">
+            <Switch
+              id="hide-optional"
+              checked={hideOptional}
+              onCheckedChange={setHideOptional}
+            />
+            <Label htmlFor="hide-optional" className="cursor-pointer text-muted-foreground">
+              Hide Optional Tags
+            </Label>
+          </div>
+          <div className="flex items-center gap-2">
+            <Switch
+              id="hide-conditional"
+              checked={hideConditional}
+              onCheckedChange={setHideConditional}
+            />
+            <Label htmlFor="hide-conditional" className="cursor-pointer text-muted-foreground">
+              Hide Conditional Tags (no relations)
+            </Label>
+          </div>
+          <div className="flex items-center gap-2">
+            <Switch
+              id="hide-not-new"
+              checked={hideNotNew}
+              onCheckedChange={setHideNotNew}
+            />
+            <Label htmlFor="hide-not-new" className="cursor-pointer text-muted-foreground">
+              Hide Non-New Report Tags
+            </Label>
+          </div>
+        </div>
+
           {tree.length > 0 ? (
             tree.map((root) => (
               <XmlTreeNode
