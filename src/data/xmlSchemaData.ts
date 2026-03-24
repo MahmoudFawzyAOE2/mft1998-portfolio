@@ -11,6 +11,7 @@ export interface XmlTag {
   groupID: string;
   relation_type: string;
   relation_with: string;
+  is_notNew: boolean;
 }
 
 // Dynamically load SheetJS from CDN
@@ -64,5 +65,6 @@ export async function loadXmlSchemaFromExcel(url: string): Promise<XmlTag[]> {
       groupID: String(row.groupID || '').trim(),
       relation_type: String(row.relation_type || '').trim(),
       relation_with: String(row.relation_with || '').trim(),
+      is_notNew: parseBool(row.is_notNew),
     }));
 }

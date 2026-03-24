@@ -4,6 +4,8 @@ import type { XmlTag } from '@/data/xmlSchemaData';
 import XmlTreeNode from '@/components/xml/XmlTreeNode';
 import type { TreeNode } from '@/components/xml/XmlTreeNode';
 import { Button } from '@/components/ui/button';
+import { Switch } from '@/components/ui/switch';
+import { Label } from '@/components/ui/label';
 import { Expand, Shrink, FileCode2, Loader2 } from 'lucide-react';
 
 const EXCEL_URL = `${import.meta.env.BASE_URL}docs/XML_Tags_Schema.xlsx`;
@@ -37,6 +39,9 @@ const XmlSchema: React.FC = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [expandAll, setExpandAll] = useState(false);
+  const [hideOptional, setHideOptional] = useState(false);
+  const [hideConditional, setHideConditional] = useState(false);
+  const [hideNotNew, setHideNotNew] = useState(false);
 
   useEffect(() => {
     loadXmlSchemaFromExcel(EXCEL_URL)
@@ -51,7 +56,16 @@ const XmlSchema: React.FC = () => {
       });
   }, []);
 
-  const tree = useMemo(() => buildTree(data), [data]);
+  const filteredData = useMemo(() => {
+    return data.filter((tag) => {
+      if (hideOptional && tag.mandatory_type === 2) return false;
+      if (hideConditional && tag.mandatory_type === 3 && !tag.relation_type) return false;
+      if (hideNotNew && tag.is_notNew) return false;
+      return true;
+    });
+  }, [data, hideOptional, hideConditional, hideNotNew]);
+
+  const tree = useMemo(() => buildTree(filteredData), [filteredData]);
 
   const tagsById = useMemo(() => {
     const map = new Map<number, XmlTag>();
@@ -185,6 +199,39 @@ const resolveRelationLabel = (node: TreeNode) => {
           <div className="flex items-center gap-2">
             <span className="text-primary animate-pulse">↻</span>
             <span>Multiple allowed</span>
+          </div>
+        </div>
+
+        <div className="flex flex-wrap gap-6 mb-6 p-4 rounded-lg bg-muted/30 border text-sm">
+          <div className="flex items-center gap-2">
+            <Switch
+              id="hide-optional"
+              checked={hideOptional}
+              onCheckedChange={setHideOptional}
+            />
+            <Label htmlFor="hide-optional" className="cursor-pointer text-muted-foreground">
+              Hide Optional Tags
+            </Label>
+          </div>
+          <div className="flex items-center gap-2">
+            <Switch
+              id="hide-conditional"
+              checked={hideConditional}
+              onCheckedChange={setHideConditional}
+            />
+            <Label htmlFor="hide-conditional" className="cursor-pointer text-muted-foreground">
+              Hide Conditional Tags (no relations)
+            </Label>
+          </div>
+          <div className="flex items-center gap-2">
+            <Switch
+              id="hide-not-new"
+              checked={hideNotNew}
+              onCheckedChange={setHideNotNew}
+            />
+            <Label htmlFor="hide-not-new" className="cursor-pointer text-muted-foreground">
+              Hide Non-New Report Tags
+            </Label>
           </div>
         </div>
 
