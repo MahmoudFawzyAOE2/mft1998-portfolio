@@ -42,6 +42,7 @@ const XmlSchema: React.FC = () => {
   const [hideOptional, setHideOptional] = useState(false);
   const [hideConditional, setHideConditional] = useState(false);
   const [hideNotNew, setHideNotNew] = useState(false);
+  const [hideAttribute, setHideAttribute] = useState(false);
 
   useEffect(() => {
     loadXmlSchemaFromExcel(EXCEL_URL)
@@ -61,9 +62,10 @@ const XmlSchema: React.FC = () => {
       if (hideOptional && tag.mandatory_type === 2) return false;
       if (hideConditional && tag.mandatory_type === 3 && !tag.relation_type) return false;
       if (hideNotNew && tag.is_notNew) return false;
+      if (hideAttribute && tag.is_attribute) return false;
       return true;
     });
-  }, [data, hideOptional, hideConditional, hideNotNew]);
+  }, [data, hideOptional, hideConditional, hideNotNew, hideAttribute]);
 
   const tree = useMemo(() => buildTree(filteredData), [filteredData]);
 
@@ -231,6 +233,16 @@ const resolveRelationLabel = (node: TreeNode) => {
             />
             <Label htmlFor="hide-not-new" className="cursor-pointer text-muted-foreground">
               Hide Non-New Report Tags
+            </Label>
+          </div>
+                    <div className="flex items-center gap-2">
+            <Switch
+              id="hide-attribute"
+              checked={hideAttribute}
+              onCheckedChange={setHideAttribute}
+            />
+            <Label htmlFor="hide-attribute" className="cursor-pointer text-muted-foreground">
+              Hide Attributes
             </Label>
           </div>
         </div>
