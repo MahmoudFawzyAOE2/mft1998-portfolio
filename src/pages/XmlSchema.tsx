@@ -235,6 +235,7 @@ const resolveRelationLabel = (node: TreeNode) => {
           </div>
         </div>
 
+        <div className="w-full">
           {tree.length > 0 ? (
             tree.map((root) => (
               <XmlTreeNode
