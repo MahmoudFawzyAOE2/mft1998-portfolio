@@ -13,6 +13,7 @@ import Documents from "./pages/Documents";
 import Contact from "./pages/Contact";
 import CV from "./pages/CV";
 import XmlSchema from "./pages/XmlSchema";
+import XmlSchemaLanding from "./pages/XmlSchemaLanding";
 import NotFound from "./pages/NotFound";
 
 const App = () => (
@@ -74,6 +75,14 @@ const App = () => (
           />
           <Route
             path="/xml"
+            element={
+              <Layout>
+                <XmlSchemaLanding />
+              </Layout>
+            }
+          />
+          <Route
+            path="/xml/:file"
             element={
               <Layout>
                 <XmlSchema />

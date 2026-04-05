@@ -8,8 +8,9 @@ import { Switch } from '@/components/ui/switch';
 import { Label } from '@/components/ui/label';
 import { Expand, Shrink, FileCode2, Loader2 } from 'lucide-react';
 
-const EXCEL_URL = `${import.meta.env.BASE_URL}docs/XML_Tags_Schema.xlsx`;
-const fileName = EXCEL_URL.split('/').pop();
+import { useParams, useNavigate } from 'react-router-dom';
+import { ArrowLeft } from 'lucide-react';
+
 
 function buildTree(data: XmlTag[]): TreeNode[] {
   const map = new Map<number, TreeNode>();
@@ -35,6 +36,11 @@ function buildTree(data: XmlTag[]): TreeNode[] {
 }
 
 const XmlSchema: React.FC = () => {
+  const { file } = useParams<{ file: string }>();
+  const navigate = useNavigate();
+  const fileName = file || 'XML_Tags_Schema.xlsx';
+  const excelUrl = `${import.meta.env.BASE_URL}docs/${fileName}`;
+
   const [data, setData] = useState<XmlTag[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -45,7 +51,9 @@ const XmlSchema: React.FC = () => {
   const [hideAttribute, setHideAttribute] = useState(false);
 
   useEffect(() => {
-    loadXmlSchemaFromExcel(EXCEL_URL)
+    setLoading(true);
+    setError(null);
+    loadXmlSchemaFromExcel(excelUrl)
       .then((tags) => {
         setData(tags);
         setLoading(false);
@@ -55,7 +63,7 @@ const XmlSchema: React.FC = () => {
         setError('Failed to load XML schema data.');
         setLoading(false);
       });
-  }, []);
+  }, [excelUrl]);
 
   const filteredData = useMemo(() => {
     return data.filter((tag) => {
@@ -167,6 +175,9 @@ const resolveRelationLabel = (node: TreeNode) => {
       <div className="section-container">
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
           <div className="flex items-center gap-3">
+            <Button variant="ghost" size="icon" onClick={() => navigate('/xml')} className="shrink-0">
+              <ArrowLeft className="h-5 w-5" />
+            </Button>
             <FileCode2 className="h-8 w-8 text-primary" />
             <div>
               <h1 className="text-3xl font-bold">XML Schema Viewer</h1>
