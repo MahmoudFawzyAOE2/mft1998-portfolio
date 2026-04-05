@@ -63,7 +63,7 @@ const XmlSchema: React.FC = () => {
         setError('Failed to load XML schema data.');
         setLoading(false);
       });
-  }, []);
+  }, [excelUrl]);
 
   const filteredData = useMemo(() => {
     return data.filter((tag) => {
