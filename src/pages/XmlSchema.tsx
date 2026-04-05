@@ -36,6 +36,11 @@ function buildTree(data: XmlTag[]): TreeNode[] {
 }
 
 const XmlSchema: React.FC = () => {
+  const { file } = useParams<{ file: string }>();
+  const navigate = useNavigate();
+  const fileName = file || 'XML_Tags_Schema.xlsx';
+  const excelUrl = `${import.meta.env.BASE_URL}docs/${fileName}`;
+
   const [data, setData] = useState<XmlTag[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -46,7 +51,9 @@ const XmlSchema: React.FC = () => {
   const [hideAttribute, setHideAttribute] = useState(false);
 
   useEffect(() => {
-    loadXmlSchemaFromExcel(EXCEL_URL)
+    setLoading(true);
+    setError(null);
+    loadXmlSchemaFromExcel(excelUrl)
       .then((tags) => {
         setData(tags);
         setLoading(false);
