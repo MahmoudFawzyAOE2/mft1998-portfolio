@@ -8,8 +8,8 @@ import { Switch } from '@/components/ui/switch';
 import { Label } from '@/components/ui/label';
 import { Expand, Shrink, FileCode2, Loader2 } from 'lucide-react';
 
-const EXCEL_URL = `${import.meta.env.BASE_URL}docs/XML_Tags_Schema.xlsx`;
-const fileName = EXCEL_URL.split('/').pop();
+import { useParams, useNavigate } from 'react-router-dom';
+import { ArrowLeft } from 'lucide-react';
 
 function buildTree(data: XmlTag[]): TreeNode[] {
   const map = new Map<number, TreeNode>();
