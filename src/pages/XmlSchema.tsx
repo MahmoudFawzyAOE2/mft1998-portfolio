@@ -175,6 +175,9 @@ const resolveRelationLabel = (node: TreeNode) => {
       <div className="section-container">
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
           <div className="flex items-center gap-3">
+            <Button variant="ghost" size="icon" onClick={() => navigate('/xml')} className="shrink-0">
+              <ArrowLeft className="h-5 w-5" />
+            </Button>
             <FileCode2 className="h-8 w-8 text-primary" />
             <div>
               <h1 className="text-3xl font-bold">XML Schema Viewer</h1>
