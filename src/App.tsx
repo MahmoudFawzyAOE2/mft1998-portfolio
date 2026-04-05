@@ -77,6 +77,14 @@ const App = () => (
             path="/xml"
             element={
               <Layout>
+                <XmlSchemaLanding />
+              </Layout>
+            }
+          />
+          <Route
+            path="/xml/:file"
+            element={
+              <Layout>
                 <XmlSchema />
               </Layout>
             }
