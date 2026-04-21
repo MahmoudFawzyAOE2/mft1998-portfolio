@@ -12,7 +12,7 @@ const documents: DocumentProps[] = [
   {
     title: "ETL Testing Summary",
     description: "Overview of ETL testing concepts and best practices to ensure data integrity and quality.",
-    categories: ["ETL Testing", "Summary"],
+    categories: ["Database", "Summary"],
     fileType: "pdf",
     driveUrl: "https://drive.google.com/file/d/18GDIpSnSjy8iDaYLsirsKwIzDXVJzHgL/view?usp=drive_link",
     date: "2026"
@@ -56,6 +56,13 @@ const documents: DocumentProps[] = [
     fileType: "pdf",
     driveUrl: "https://drive.google.com/file/d/1JWWvJqQt72Npo53xXDOK5BBM3Rt9eqgU/view?usp=drive_link",
     date: "2024"
+  },
+    {title: "SQL Summary",
+    description: "Key SQL concepts, commands, and other DB fundamentals to effectively work with databases.",
+    categories: ["Database", "Summary"],
+    fileType: "pdf",
+    driveUrl: "https://drive.google.com/file/d/1HwXri7zB0b8S7R2W2-nXCyCQqRpxoGae/view?usp=drive_link",
+    date: "2025"
   },
     {
     title: "ISTQB FL V4 Summary",
