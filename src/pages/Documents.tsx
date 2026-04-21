@@ -7,6 +7,7 @@ import {
   CarouselPrevious,
   CarouselNext,
 } from "@/components/ui/carousel"
+import { cn } from "@/lib/utils"
 
 const documents: DocumentProps[] = [
   {
