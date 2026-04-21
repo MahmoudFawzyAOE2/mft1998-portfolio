@@ -7,6 +7,7 @@ import {
   CarouselPrevious,
   CarouselNext,
 } from "@/components/ui/carousel"
+import { cn } from "@/lib/utils"
 
 const documents: DocumentProps[] = [
   {
@@ -103,21 +104,21 @@ const DocumentCarouselSection = ({
           align: "start",
           loop: false,
         }}
-        className="w-full px-10"
+        className="w-full md:px-10"
       >
-        <CarouselContent>
+        <CarouselContent className="-ml-4">
           {items.map((doc, index) => (
             <CarouselItem
               key={index}
-              className="lg:basis-1/2 xl:basis-1/3"
+              className="pl-4 basis-[85%] sm:basis-1/2 lg:basis-1/2 xl:basis-1/3"
             >
               <DocumentCard {...doc} />
             </CarouselItem>
           ))}
         </CarouselContent>
 
-        <CarouselPrevious />
-        <CarouselNext />
+        <CarouselPrevious className={cn("hidden md:inline-flex", "disabled:hidden disabled:opacity-0 disabled:pointer-events-none")} />
+        <CarouselNext className={cn("hidden md:inline-flex", "disabled:hidden disabled:opacity-0 disabled:pointer-events-none")} />
       </Carousel>
     </section>
   )
